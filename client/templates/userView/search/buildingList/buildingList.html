@@ -1,0 +1,90 @@
+<template name="buildingList">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton path="main" class="back-btn back-to-map"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">results</h1>
+    {{/contentFor}}
+
+    <!-- {{#contentFor "headerButtonRight"}}
+      <a id="parkingReceiptDone" class="button button-clear header-right-btn" >
+        Done
+      </a>
+    {{/contentFor}} -->
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+        <div class="buildingList-container">
+            <div class="locationText-row">
+              <!-- <div class="locationText col1">
+                  <i class="fa fa-map-marker"></i>
+              </div> -->
+
+              <!-- <div class="locationText col2"> -->
+                  {{getFirstLocationText}}
+                  <!-- 418 Kwun Tong Road, Kowloon -->
+              <!-- </div> -->
+            </div>
+            <div class="available-spaces">
+                <div class="available-space-text">
+                    Available parking spaces in the area <span>{{totalSpaces}}</span>
+                </div>
+                <!-- <div class="available-space-value">
+
+                </div> -->
+            </div>
+
+            <div class="spaceList">
+                {{#each parkingSpaces}}
+                <div class="spaceList-cell">
+                    <div class="spaceList-image-left" style="background-image: url('{{this.parkingSpaceImg}}')">
+                    </div>
+                    <div class="spaceList-container-right">
+                      <div class="spaceList-price">
+                          <div class="price-label">price</div>
+                          <!-- <div class="price-text">${{timeslotPrice}} / hour</div> -->
+                          <div class="price-text">${{timeslotPrice}}</div>
+                      </div>
+                      <div class="spaceList-lower-container">
+                        <div class="spaceList-floor">
+                            <div class="floor-label">Floor</div>
+                            <div class="floor-text">{{this.spaceFloor}}</div>
+                        </div>
+                        <div class="spaceList-space-no">
+                            <div class="floor-label">space no.</div>
+                            <div class="floor-text">{{this.spaceNum}}</div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <div class="spaceList-rating">
+                      <div class="rating-stars-container">
+                        {{#each userRatings}}
+                          {{#if isFullStar @index}}
+                            <i class="fa fa-star"></i>
+                          {{else}}
+                            <i class="fa fa-star-o"></i>
+                          {{/if}}
+                        {{/each}}
+                      </div>
+                      <div class="rating-view">
+                        <div class="view-text">
+                          view
+                        </div>
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+
+                        <!-- <div class="rating-text">RATING</div>
+                        <div class="rating-value">4/5</div> -->
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

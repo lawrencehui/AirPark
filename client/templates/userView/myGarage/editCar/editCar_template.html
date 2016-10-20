@@ -1,0 +1,39 @@
+<template name='editCar'>
+	{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="back" path=backPath}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-pediting title-center">edit car</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="buttons button button-clear header-right-btn" id="editCarSave">
+      save
+    </button>
+  {{/contentFor}}
+
+	{{#ionView}}
+    {{#ionContent class="bg-color"}}
+      <section class="editCar-container table-view-container">
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              car model
+            </label>
+          	<input type="text" id="editCarModel" value={{modelText}} placeholder="e.g. BMW">
+          </div>
+        </div>
+				<div class="row">
+          <div class="field">
+            <label class="text">
+              license plate
+            </label>
+          	<input type="text" id="editCarNumber" value={{numberText}} placeholder="e.g. TD1888">
+          </div>
+        </div>
+				<div class="delete-car-button">Delete</div>
+      </section>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

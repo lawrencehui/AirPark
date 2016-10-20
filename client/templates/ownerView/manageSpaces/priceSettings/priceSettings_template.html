@@ -1,0 +1,105 @@
+<template name='priceSettings'>
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">schedule</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    {{>ionNavBackButton class="back-btn" text="save"}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="bg-color"}}
+		<section class="price-settings-container">
+			<!-- <div class="cell master-toggle">
+				<div class="title">Next Period Available</div>
+				<div class="switch">
+					<label class="toggle theme-toggle">
+			       <input type="checkbox">
+			       <div class="track">
+			         <div class="handle"></div>
+			       </div>
+			     </label>
+				</div>
+			</div> -->
+
+			<section class="twoPark-container">
+        <div class="month-nav-container">
+          <div class="fa fa-angle-left nav-btn prev-month-btn"></div>
+          <div class="month">{{month}}</div>
+          <div class="fa fa-angle-right nav-btn next-month-btn"></div>
+        </div>
+
+				<div class="calender-carousel-container">
+					<div class="calender-carousel-wrapper">
+					{{#HammerTouchArea gestureMap=calenderCarouselGestures}}
+					<section id="calender-carousel">
+						{{#each months}}
+						<div class="calender-container" data-index="{{@index}}">
+							<div class="day-bar-container">
+								<div class="day" id="mon">Mon</div>
+								<div class="day" id="tue">Tue</div>
+								<div class="day" id="wed">Wed</div>
+								<div class="day" id="thu">Thu</div>
+								<div class="day" id="fri">Fri</div>
+								<div class="day" id="sat">Sat</div>
+								<div class="day" id="sun">Sun</div>
+							</div>
+							<div class="month-container">
+								{{#each dates}}
+									<div class="date-box {{available}} {{empty}} {{today}} {{selected}}" data-date="{{fullDate}}">
+										<div class="text unclickable"><span>{{this.date}}</span></div>
+										<div class="annotation unclickable"></div>
+									</div>
+								{{/each}}
+							</div>
+						</div>
+						{{/each}}
+					</section>
+					{{/HammerTouchArea}}
+					</div>
+				</div>
+
+				<section class="slot-container">
+					{{#each slotIndex}}
+						{{#with getTimeslotInfo @index}}
+	          <div class="cell" data-type="{{@index}}">
+							<label class="checkbox checkbox-assertive">
+								<input data-type="{{@index}}" type="checkbox" name="group" {{isChecked @index}} {{isDisabled @index}}>
+								<!-- <div class="item-content">
+									{{getSlotText @index}}
+								</div> -->
+							</label>
+	            <div class="title">{{getSlotText @index}}</div>
+							<div class="dollar-sign">$ </div>
+							<input class="price-input" data-type="{{@index}}" placeholder='e.g 14' maxlength='2' tabindex="-1" pattern="[0-9]{1,2}" type="number" value='{{this.timeslotPrice}}' {{isDisabled @index}}>
+	            <!-- <div class="switch">
+	              <label class="toggle theme-toggle">
+	                 <input type="checkbox" data-type="{{@index}}" {{this.isChecked}} {{this.isDisabled}}>
+	                 <div class="track">
+	                   <div class="handle"></div>
+	                 </div>
+	               </label>
+	            </div> -->
+	          </div>
+	          <!-- <div class="price-box {{getToggleOpenStatus @index}}" data-type="{{@index}}">
+	            <div class="title">Price per hour</div>
+							<div class="price-input-container">
+								<div class="dollar-sign">$ </div>
+								<div class="input price-input">
+									<input type="text" data-type="{{@index}}" placeholder='e.g 14' maxlength='2' value='{{this.timeslotPrice}}' {{this.isDisabled}}>
+								</div>
+							</div>
+	          </div> -->
+						{{/with}}
+					{{/each}}
+				</section>
+			</section>
+
+		</section>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

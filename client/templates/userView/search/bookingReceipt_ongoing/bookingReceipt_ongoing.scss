@@ -1,0 +1,244 @@
+.bookingReceiptOngoingView-container{
+  position: relative;
+  @extend %flex-column-container;
+  justify-content: space-between;
+  align-items: center;
+  @include main-font-fix();
+  font-size: 1.1rem;
+  height: 100%;
+  //font-weight: bold;
+  //margin-top: 8vh;
+
+  .card.no-margin {
+    width: 88%;
+    // height: 100%;
+    margin: 8% 10%;
+    padding: 10%;
+    overflow: scroll;
+
+    .dottedLine {
+      border-bottom: 3px dotted #000;
+      margin: 8px 0;
+
+    }
+
+    .parkingReceiptTitle {
+      @include main-font-fix(bold);
+      text-align: center;
+      letter-spacing: 0.1rem;
+      font-size: 2rem;
+    }
+
+    .bookingRef {
+      text-align: center;
+      letter-spacing: 0.1rem;
+    }
+
+    div.uploadImg{
+      @extend %flex-column-container;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 16px 0;
+      margin-bottom: -8px;
+      height: 160px;
+      color: $theme-main-green;
+      font-size: 0.8rem;
+      position: relative;
+
+      div.uploadedImg-background {
+        height: 160px;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .fa.uploadedImg {
+        font-size: 4rem;
+        color: $theme-main-green;
+        margin-top: -24px;
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: inline-block;
+        opacity: 0;
+        width: 100%;
+      }
+    }
+
+    .top-section-container {
+      margin-bottom: 20px;
+    }
+
+    .receipt-row {
+      @extend %flex-row-container;
+      justify-content: flext-start;
+      align-items: flex-start;
+      font-size: 1.2rem;
+      margin: 4px 0;
+
+      .details-remarks-icons {
+        flex: 9 0 0;
+        @extend %flex-row-container;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: $theme-main-green;
+        font-size: 1.2rem;
+
+        .fa {
+          //flex: 1 0 0;
+          padding-right: 8px;
+          //text-align: center;
+        }
+      }
+
+      div.receipt-row-top-section {
+        &.col1 {
+                  width: 25%;
+                  font-size: 1rem;
+
+                  &.marker-icon {
+                    font-size: 1rem;
+                  }
+                }
+        &.col2 {
+          width: 75%;
+          color: $theme-main-green;
+
+          &.locationText {
+              font-family: Futura;
+              font-size: 0.8rem;
+              letter-spacing: 0;
+              margin-bottom: 6px;
+              color: $theme-black;
+            }
+        }
+      }
+
+      div.receipt-row-child {
+        &.col1 {  width: 25%;
+                  font-size: 1rem; }
+        &.col2 {  width: 35%; }
+        &.col3 {  width: 40%;
+                  font-size: 1rem;
+                  color: $theme-main-green }
+      }
+
+    }
+
+    .thankyou {
+      text-align: center;
+      font-size: 1rem;
+      margin: 18px 0;
+      @include main-font-fix();
+      letter-spacing: 0.1rem;
+    }
+
+    .cancelBtn {
+      border: 1px solid #bfbfbf;
+      margin: 4px 0;
+      text-align: center;
+      background-color: #bfbfbf;
+      padding: 8px 0;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: background-color 0.1s linear,
+                  border 0.1s linear;
+      cursor: pointer;
+
+      &:active {
+        border: 1px solid darken(#bfbfbf, 20);
+        background-color: darken(#bfbfbf, 20);
+      }
+    }
+
+    .contactBtn, .reportBtn {
+      border: 1px solid $theme-main-green;
+      margin: 8px 0;
+      text-align: center;
+      background-color: $theme-main-green;
+      padding: 8px 0;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: background-color 0.1s linear,
+                  border 0.1s linear;
+      cursor: pointer;
+
+      &:active {
+        border: 1px solid #55a2aa;
+        background-color: #55a2aa;
+      }
+    }
+  }
+
+  .black-overlay {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: -44px;
+    bottom: 0;
+    background-color: transparentize(#000, 0.3);
+    pointer-events: none;
+    opacity: 0;
+
+    &.open {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+
+  .cancel-modal {
+    position: absolute;
+    z-index: 1000;
+    left: 40px;
+    right: 40px;
+    top: 35%;
+    @extend %flex-column-container;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+
+    &.open {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    .modal-top {
+      border: 1px solid #000;
+      background-color: #FFF;
+      border-radius: 4px;
+    }
+
+    .modal-header {
+      padding: 12px;
+    }
+
+    .modal-red-button {
+      width: 100%;
+      padding: 12px;
+      border-top: 1px solid #000;
+      color: $theme-main-green;
+      text-align: center;
+    }
+
+    .modal-back-button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #000;
+      background-color: #FFF;
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+
+
+
+
+}

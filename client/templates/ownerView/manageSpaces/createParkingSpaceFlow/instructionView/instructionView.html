@@ -1,0 +1,97 @@
+<template name="instructionView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">instructions</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="instructionsNext" class="button button-clear header-right-btn" >
+        {{Next}}
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+  			<section class="create-space-wrapper">
+  				<div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-05.png');"></div>
+  				<div class="create-space-container">
+            <div class="instructionView-container">
+              <!-- <div class="divider-text">Tell others about how to find your space. (max 50 words)</div> -->
+              <div class="divider-text">Please select up to 3 instructions</div>
+
+              <div class="instructionInput-container">
+
+                <div class="card no-margin">
+                  <label class="item item-radio">
+                    <input id="notSetRadio" value="0" type="checkbox" name="group">
+                    <div class="item-content">
+                      Not set
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="instruction1Radio" class="instructionRadio" value="1" type="checkbox" name="group">
+                    <div class="item-content">
+                      Exit requires proof of rental voucher
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="instruction2Radio" class="instructionRadio" value="2" type="checkbox" name="group">
+                    <div class="item-content">
+                      Park close to the wall
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="instruction3Radio" class="instructionRadio" value="3" type="checkbox" name="group">
+                    <div class="item-content">
+                      Park all the way to the left
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="instruction4Radio" class="instructionRadio" value="4" type="checkbox" name="group">
+                    <div class="item-content">
+                      Park all the way to the right
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="instruction5Radio" class="instructionRadio" value="5" type="checkbox" name="group">
+                    <div class="item-content">
+                      Head-first parking only
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="instruction6Radio" class="instructionRadio" value="6" type="checkbox" name="group">
+                    <div class="item-content">
+                      Reverse parking only
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="instruction7Radio" class="instructionRadio" value="7" type="checkbox" name="group">
+                    <div class="item-content">
+                      Access requires octopus card, or call management office
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                </div>
+              </div>
+
+              <div class="custom-instruction-container">
+                <label class="instructionLabel" for="instructionText">Custom instructions</label>
+                <textarea id="instructionText" class="textarea-input" maxlength="200" placeholder="Add some descriptions to help renters to find tour space!"></textarea>
+                <div class="wordsLeftText"> {{wordLeftCount}} characters left</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

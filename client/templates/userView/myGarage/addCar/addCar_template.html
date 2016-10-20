@@ -1,0 +1,38 @@
+<template name='addCar'>
+	{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="back" path=backPath}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">add car</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="buttons button button-clear header-right-btn" id="addCarSave">
+      save
+    </button>
+  {{/contentFor}}
+
+	{{#ionView}}
+    {{#ionContent class="bg-color"}}
+      <section class="addCar-container table-view-container">
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              car model
+            </label>
+          	<input type="text" id="addCarModel" value="" placeholder="e.g. BMW">
+          </div>
+        </div>
+				<div class="row">
+          <div class="field">
+            <label class="text">
+              license plate
+            </label>
+          	<input type="text" id="addCarNumber" value="" placeholder="e.g. TD1888">
+          </div>
+        </div>
+      </section>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

@@ -1,0 +1,107 @@
+<template name='calenderDropdown'>
+	<section class="twoPark-container">
+		<div class="date-filter-container {{isDateFilter}}">
+			<div class="month-nav-container">
+				<div class="fa fa-angle-left nav-btn prev-month-btn"></div>
+				<div class="month">{{month}}</div>
+				<div class="fa fa-angle-right nav-btn next-month-btn"></div>
+			</div>
+			<div class="calender-carousel-container">
+				<div class="calender-carousel-wrapper">
+			  {{#HammerTouchArea gestureMap=calenderCarouselGestures}}
+			  <section id="calender-carousel">
+			    {{#each months}}
+			    <div class="calender-container" data-index="{{@index}}">
+						<!-- <div class="month">{{month}}</div> -->
+			      <div class="day-bar-container">
+			        <div class="day" id="mon">Mon</div>
+			        <div class="day" id="tue">Tue</div>
+			        <div class="day" id="wed">Wed</div>
+			        <div class="day" id="thu">Thu</div>
+			        <div class="day" id="fri">Fri</div>
+			        <div class="day" id="sat">Sat</div>
+			        <div class="day" id="sun">Sun</div>
+			      </div>
+			      <!-- <div class="separator"></div> -->
+			      <div class="month-container">
+			        {{#each dates}}
+			          <div class="date-box {{available}} {{empty}} {{today}} {{selected}}" data-date="{{fullDate}}">
+			            <div class="text unclickable"><span>{{this.date}}</span></div>
+			            <div class="annotation unclickable"></div>
+			          </div>
+			        {{/each}}
+			      </div>
+			    </div>
+			    {{/each}}
+			  </section>
+			  {{/HammerTouchArea}}
+			  </div>
+			</div>
+		</div>
+		<div class="time-filter-container {{isDateFilter}}">
+
+			<section class="search-time-range-container">
+				<div class="cell-wrapper">
+					<div class="cell-container">
+						<div class="cell">
+							<label class="checkbox checkbox-assertive">
+								<input type="radio" name="searchTimeslot" data-type="0" id="searchDayParking">
+								<!-- <input type="radio" name="searchTimeslot" data-type="0" id="searchDayParking" {{timeslotChecked 0}}> -->
+							</label>
+							<div class="title">Day Parking (8am - 10pm)</div>
+						</div>
+						<div class="cell">
+							<label class="checkbox checkbox-assertive">
+								<input type="radio" name="searchTimeslot" data-type="1" id="searchNightParking">
+							</label>
+							<div class="title">Night Parking (10pm - 8am)</div>
+						</div>
+						<div class="cell">
+							<label class="checkbox checkbox-assertive">
+								<input type="radio" name="searchTimeslot" data-type="2" id="searchAllDay">
+							</label>
+							<div class="title">All Day (8am - 8am)</div>
+						</div>
+						<div class="cell">
+							<label class="checkbox checkbox-assertive">
+								<input type="radio" name="searchTimeslot" data-type="3" id="search95">
+							</label>
+							<div class="title">9am - 5pm</div>
+						</div>
+						<!-- <div class="moving-container" id="searchHourlyParkingInput">
+							<div class="grey-cell">
+								<div class="weekday-text"></div>
+								<div class="text">from</div>
+								<select class="startTime" name="" id="searchStartTime">
+									{{#each timeSlot}}
+										<option value={{@index}} {{isSelectedStart @index}} {{isDisabledStart @index}}>{{this}}</option>
+									{{/each}}
+								</select>
+								<div class="text">to</div>
+								<select class="endTime" name="" id="searchEndTime">
+									{{#each timeSlot}}
+										<option value={{@index}} {{isSelectedEnd @index}} {{isDisabledEnd @index}}>{{this}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="night-cell">
+								<label class="checkbox checkbox-assertive">
+									<input type="checkbox" name="group" id="searchOvernightParking">
+								</label>
+								<div class="title">Night Parking (10pm - 6am)</div>
+							</div>
+						</div> -->
+					</div>
+				</div>
+				<!-- {{#each timeslots}}
+					<div class="slot {{isSelected}}" data-type='{{this.type}}'>
+						<div class="title">{{this.text}}</div>
+						<div class="check"></div>
+					</div>
+				{{/each}} -->
+			</section>
+		</div>
+
+		<div class="done-btn">Done</div>
+	</section>
+</template>

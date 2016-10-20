@@ -1,0 +1,173 @@
+
+input.login-input {
+	font-size: 1em;
+	font-family: $sub-font-family;
+	color: #fff;
+	height: 48px;
+	letter-spacing: 0.1rem;
+	padding: 0 16px;
+  background-color: rgba(0,0,0,0);
+  border-style: solid;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  padding: 0 0 0 0;
+  width: 100%;
+}
+
+.padding > .list .item {
+	margin-left: 48px;
+	margin-right: 48px;
+}
+
+.new-button {
+	@extend %flex-row-container;
+	justify-content: flex-start;
+	align-items: center;
+	width: calc(100% - 6px);
+	font-family: $main-font-family-bold;
+	height: 46px;
+	color: #fff;
+	border: 1px rgba(255,255,255,0.75) solid;
+	font-size: 1rem;
+	padding-top: 1px;
+	letter-spacing: 0.15rem;
+	transition: background-color 0.2s linear,
+							box-shadow 0.2s linear;
+	margin: 12px 0 12px 3px;
+	cursor: pointer;
+
+	background-color: transparentize($default-btn, 0.5);
+	box-shadow: 0 0 0 3px transparentize($default-btn, 0.5);
+
+	&:active {
+		background-color: transparentize($default-btn, 0.2);
+		box-shadow: 0 0 0 3px transparentize($default-btn, 0.2);
+	}
+
+	.pipe {
+		height: 50%;
+		width: 2px;
+		background-color: #ccc;
+	}
+
+	.new-button-text {
+		text-align: center;
+		flex-grow: 1;
+	}
+
+	&.google-login{
+		background-color: transparentize($google-red, 0.25);
+		box-shadow: 0 0 0 3px transparentize($google-red, 0.25);
+
+		&:active {
+			background-color: transparentize($google-red, 0);
+			box-shadow: 0 0 0 3px transparentize($google-red, 0);
+		}
+
+		.icon {
+			font-size: 1.5rem;
+			text-align: center;
+			margin-left: 24px;
+			margin-right: 20px;
+		}
+	}
+
+	&.facebook-login {
+		background-color: transparentize($facebook-blue, 0.25);
+		box-shadow: 0 0 0 3px transparentize($facebook-blue, 0.25);
+
+		&:active {
+			background-color: transparentize($facebook-blue, 0);
+			box-shadow: 0 0 0 3px transparentize($facebook-blue, 0);
+		}
+
+		.icon {
+			font-size: 1.5rem;
+			text-align: center;
+			margin-left: 24px;
+			margin-right: 32px;
+		}
+	}
+}
+
+.login {
+	@extend %flex-column-container;
+	justify-content: flex-start;
+	align-items: center;
+	//height: 100vh;
+
+	.blur-bg {
+		position: fixed;
+		top: 0px;
+		bottom:  0px;
+		left:  0px;
+		right:  0px;
+		background: url(/images/2park_bg.jpg) center center no-repeat;
+		background-size: cover;
+		//filter: blur(3px) brightness(0.5);
+	  //-webkit-filter: blur(3px) brightness(0.5);
+	  z-index: -1;
+	}
+
+	form {
+		margin: 48px 0 0 0;
+		width: 80%;
+	}
+
+	#loginBtn {
+		margin-top: 32px;
+	}
+
+	.logo-container {
+		@extend %flex-column-container;
+		margin-top: 28%;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 85%;
+		}
+		h1 {
+			font-family: $main-font-family;
+			color: #fff;
+			font-size: 2.8rem;
+			margin-top: -20px;
+			text-shadow: 0px 1px 2px rgba(0,0,0,0.6);
+			letter-spacing: 0.5rem;
+		}
+
+	}
+
+	.vert-container {
+		@extend %flex-column-container;
+		justify-content: center;
+		align-items: center;
+		width: 80%;
+		margin: 16px 0;
+	}
+
+	.hori-container {
+		@extend %flex-row-container;
+		justify-content: space-between;
+		width: 100%;
+		padding: 0 0;
+		font-family: $main-font-family;
+		letter-spacing: 0.1rem;
+
+		a {
+			color: #ddd;
+		}
+	}
+
+	.fb-login-btn{
+		@extend %flex-column-container;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		cursor: pointer;
+		// height: 44px;
+
+		img {
+			width: 80%;
+		}
+	}
+}

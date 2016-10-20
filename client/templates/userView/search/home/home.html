@@ -1,0 +1,60 @@
+<template name="main">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+        {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Search</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+    <section class="home-container">
+      <div id="map2" name="map2"></div>
+      <!-- <div id="currentLocationBtn">
+        <i class="fa fa-crosshairs {{isCurrentLocationActive}}"></i>
+      </div> -->
+      <div class="card search-card">
+        <div class="date-time-filter-container">
+          <div class="date-container">
+            <div class="label">Date</div>
+            <div class="value date">{{selectedDate}}</div>
+          </div>
+          <div class="time-container">
+            <div class="label">Time</div>
+            <div class="value time-slot">{{selectedTimeslot}}</div>
+          </div>
+        </div>
+        <div class="drop-down-container"></div>
+        <div class="search-bar {{isDropdownOpen}}">
+          <form class="searchBarForm">
+            <input id="searchBar" class="searchBox" name="focus" type="text" placeholder="Where are you going?">
+            <button class="reset-button" type="reset">
+              <i class="fa fa-times-circle"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="filter-container">
+        <div class="filter-btn {{isSelected 0}}" data-toggle-type="0">EV</div>
+        <div class="filter-btn {{isSelected 1}}" data-toggle-type="1">Disabled</div>
+        <div class="filter-btn {{isSelected 2}}" data-toggle-type="2">Free</div>
+      </div>
+    </section>
+
+
+    <!-- {{#unless isCurrentLocationActive}}
+      {{> ionSpinner icon="ripple"}}
+      <div class="spinner-text">locating your position...</div>
+    {{/unless}} -->
+    {{/ionContent}}
+  {{/ionView}}
+
+
+
+<!--   <h1>Welcome to Meteor!</h1> -->
+</template>

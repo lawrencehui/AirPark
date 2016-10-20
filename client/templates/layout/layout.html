@@ -1,0 +1,83 @@
+<template name="layout">
+  {{#ionBody}}
+    {{#ionSideMenuContainer side="left" dragContent=false}}
+      {{#ionSideMenus}}
+        {{#ionSideMenu}}
+          <div class="bg-sidemenu">
+            <!-- <div class="bar bar-header bar-dark">
+              <h1 class="title sidemenu-title">2Park</h1>
+            </div> -->
+            <div class="content override-header">
+              <div class="list">
+                <div class="item item-divider thick-divider">
+                  User
+                </div>
+                <a href="{{pathFor 'main'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Search
+                </a>
+                <a href="{{pathFor 'userBookingRecordList'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Bookings
+                </a>
+                <!-- <a href="{{pathFor}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Manage Your Car
+                </a> -->
+                <div class="item item-divider thick-divider">Owner</div>
+                <a href="{{pathFor 'manageSpacesList'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Manage Spaces
+                </a>
+                <!-- <a href="{{pathFor 'bookingRecordList'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Manage Bookings
+                </a> -->
+                <div class="item item-divider thick-divider" >
+                  General
+                </div>
+                <a href="{{pathFor 'wallet'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Wallet
+                </a>
+                <!-- <a href="{{pathFor 'paymentMethods'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Payment Methods
+                </a>
+                <a href="{{pathFor 'payoutMethods'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Payout Methods
+                </a>
+                <a href="{{pathFor 'accountBalance'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Account Balance
+                </a> -->
+                <a href="{{pathFor 'myGarage'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  My Garage
+                </a>
+                <a href="{{pathFor 'accountMain'}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Profile
+                </a>
+                <!-- <a href="{{pathFor}}" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Settings
+                </a> -->
+                <a href="#" id="logoutBtn" class="item right-padding sidemenu-text" data-ion-menu-close>
+                  Logout
+                </a>
+              </div>
+            </div>
+          </div>
+        {{/ionSideMenu}}
+      {{/ionSideMenus}}
+
+      {{#ionSideMenuContent}}
+        {{#unless isActiveRoute 'loginMain'}}
+          {{> ionNavBar class="bar-dark"}}
+          <!-- {{> ionNavBar}} -->
+        {{/unless}}
+
+        {{#ionNavView}}
+          {{> yield}}
+        {{/ionNavView}}
+        {{> connectionStatusBanner}}
+
+        <!-- {{> yield}} -->
+
+      {{/ionSideMenuContent}}
+
+    {{/ionSideMenuContainer}}
+  {{/ionBody}}
+  <div class="spinner-container"></div>
+
+</template>

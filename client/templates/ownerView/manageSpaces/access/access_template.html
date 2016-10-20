@@ -1,0 +1,72 @@
+<template name='access'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn access-back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">who has access</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="accessSave" class="button button-clear header-right-btn" >
+			Save
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="access-container">
+				<div class="cell">
+					<div class="access-text">Everyone</div>
+					<label class="checkbox checkbox-assertive">
+						<input type="checkbox" name="access" id="everyoneAccess">
+					</label>
+				</div>
+				<div class="group-container">
+					<div class="group-wrapper">
+						<div class="cell">
+							<div class="access-text">2park Groups</div>
+							<label class="checkbox checkbox-assertive">
+								<input type="checkbox" name="access" id="groupAccess">
+							</label>
+						</div>
+						<div class="moving-container" id="2parkGroup">
+							<div class="grey-cell">
+								<label class="checkbox checkbox-assertive">
+									<input type="checkbox" name="group" id="evOnly">
+								</label>
+								<div class="group-text">
+								 	EV only
+								</div>
+							</div>
+							<div class="grey-cell">
+								<label class="checkbox checkbox-assertive">
+									<input type="checkbox" name="group" id="disabledOnly">
+								</label>
+								<div class="group-text">
+								 	Disabled only
+								</div>
+							</div>
+							<div class="grey-cell">
+								<label class="checkbox checkbox-assertive">
+									<input type="checkbox" name="group" id="landRover">
+								</label>
+								<div class="group-text">
+								 	Land Rover Club
+								</div>
+							</div>
+							<div class="custom-cell">
+								<div class="access-text">
+									Custom Groups
+								</div>
+								<div class="custom-groups-edit">
+									Edit
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

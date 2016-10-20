@@ -1,0 +1,120 @@
+section.create-space-wrapper {
+  @extend %flex-column-container;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .steps-bar {
+    flex: 0 0 40px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .create-space-container {
+    flex: 1 0 0;
+  }
+}
+
+#searchBar {
+  width: 100%;
+  height: 32px;
+  padding: 20px 16px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-right: 54px;
+  font-family: Futura;
+}
+
+.searchBarForm {
+  //@extend %flex-row-container;
+  //justify-content: space-around;
+  //align-items: stretch;
+  position: relative;
+  width: 100%;
+}
+
+button.reset-button {
+  border: 0;
+  background-color: #fff;
+  //padding-right: 16px;
+  position: absolute;
+  right: 2%;
+  top: 3%;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 10px 10px;
+
+  i {
+    color: #999999;
+  }
+}
+
+.searchBox:not(:valid) ~ .close-icon {
+	display: none;
+}
+
+
+.search-card {
+  width: calc(100% - 20px);
+  position: absolute;
+  max-height: 80%;
+  overflow-y: scroll;
+}
+
+input:focus {
+  outline: none;
+}
+
+#map1 {
+  width: 100%;
+  max-width: 100%;
+  //height: calc(100% - 44px);
+  height: 100%;
+  position: absolute;
+}
+
+#currentLocationBtn {
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  position: absolute;
+  right: 10px;
+  bottom: 132px;
+  box-shadow: 1px 1px 4px 1px #CCCCC5;
+  text-align: center;
+
+  .fa-crosshairs {
+    color: #555555;
+    font-size: 1.2rem;
+    position: relative;
+    top: calc(50% - 9px);
+
+    &:active {
+      color: #74c4f7;
+    }
+  }
+
+  .location-icon-active {
+    color: #74c4f7;
+  }
+}
+
+i.spinner {
+  // position: absolute;
+  // top: calc(50% - 48px);
+  // left: calc(50% - 48px);
+
+  svg {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+.spinner-text {
+  position: absolute;
+  top: calc(50% + 40px);
+  left: calc(50% - 70px);
+  font-family: $main-font-family;
+  font-size: 1.5 rem;
+}

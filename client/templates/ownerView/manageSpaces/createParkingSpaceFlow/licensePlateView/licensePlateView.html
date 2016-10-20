@@ -1,0 +1,28 @@
+<template name="licensePlateView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">license plate</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="licenseNumNext" class="button button-clear header-right-btn" >
+        Next
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+        <div class="licensePlateView-container">
+          <div class="divider-text">Please input your license plate number.</div>
+          <div class="licensePlateViewInput-container">
+            <input id="licensePlate" type="text" maxlength="8" placeholder="e.g. TD1388" style="text-transform:uppercase">
+          </div>
+        </div>
+
+      {{/ionContent}}
+    {{/ionView}}
+</template>

@@ -1,0 +1,57 @@
+<template name='addCreditCard'>
+	{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="cancel" path=backPath}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">credit card</h1>
+  {{/contentFor}}
+
+	<!-- {{#contentFor "headerButtonRight"}}
+		<a id="addCreditCardDone" class="button button-clear header-right-btn" >
+			Done
+		</a>
+	{{/contentFor}} -->
+
+	{{#ionView}}
+    {{#ionContent class="bg-color"}}
+		<section class="add-credit-card-container table-view-container">
+			<form id="credit-card-information">
+
+						<div class="row">
+							<div class="field" id="cardholder-name">
+								<label class="text">Cardholder Name</label>
+								<input type="text" id="cardholder-name">
+							</div>
+						</div>
+
+						<div class="row multi-field-row">
+							<div class="field" id="card-number-container">
+								<label class="text" for="card-number">Card number</label>
+								<div class="iframe-field" id="card-number"></div>
+							</div>
+							<div class="field" id="cvv-container">
+								<label class="text" for="cvv">CVV</label>
+								<div class="iframe-field" id="cvv"></div>
+							</div>
+						</div>
+
+						<div class="row multi-field-row">
+							<div class="field" id="expiration-month-container">
+								<label class="text" for="expiration-month">Expiration month</label>
+								<div class="iframe-field" id="expiration-month"></div>
+							</div>
+
+							<div class="field" id="expiration-year-container">
+								<label class="text" for="expiration-year">Expiration year</label>
+								<div class="iframe-field" id="expiration-year"></div>
+							</div>
+						</div>
+
+						<input id="addCreditCardDone" type="submit" value="Add" />
+
+			</form>
+		</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

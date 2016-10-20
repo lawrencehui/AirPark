@@ -1,0 +1,81 @@
+<template name="viewBookingRecord">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title title-left-padding title-center">records</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+        <div class="view-booking-tabs">
+          <div class="upcoming-tab {{isUpcomingSelected}}">
+            UPCOMING
+          </div>
+          <div class="history-tab {{isHistorySelected}}">
+            HISTORY
+          </div>
+        </div>
+        <div class="view-booking-container">
+          {{#if upcomingActive}}
+            {{> ownerUpcomingRecords}}
+          {{else}}
+            {{> ownerHistoryRecords}}
+          {{/if}}
+        </div>
+      {{/ionContent}}
+    {{/ionView}}
+</template>
+
+<template name="ownerUpcomingRecords">
+    {{#each upcomingRecords }}
+        {{> ownerBookingCell}}
+    {{/each}}
+</template>
+
+<template name="ownerHistoryRecords">
+    {{#each historyRecords }}
+        {{> ownerBookingCell}}
+    {{/each}}
+</template>
+
+<template name="ownerBookingCell">
+    <div class="owner-view-booking-cell">
+      <!-- <div class="view-booking-image-container">
+        <div class="view-booking-image"></div>
+        <div class="fa fa-user view-booking-image-icon"></div>
+      </div> -->
+      <!-- <div class="booking-records-image" style="background-image: url('{{showImg}}')"></div> -->
+      <!-- <div class="view-booking-price">${{this.amount}}.00</div> -->
+      <div class="view-booking-content">
+        <div class="upper-container">
+          <div class="user-name">
+            {{firstName}} {{lastName}}
+          </div>
+          <!-- <div class="user-pipe">|</div>
+          <div class="user-number">
+            CD 333
+          </div> -->
+        </div>
+        <div class="lower-container">
+          <div class="item-container">
+            <div class="item-title">
+              date
+            </div>
+            <div class="item-content">
+              {{this.timeslotDate}}
+            </div>
+          </div>
+          <div class="item-container">
+            <div class="item-title">
+              time
+            </div>
+            <div class="item-content">
+              {{timeslotTypeText}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>

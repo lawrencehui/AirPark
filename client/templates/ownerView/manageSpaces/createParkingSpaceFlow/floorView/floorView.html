@@ -1,0 +1,30 @@
+<template name="floorView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">floor</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="floorNext" class="button button-clear header-right-btn" >
+        Next
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+      <div class="floorView-container">
+        <div class="divider-text">Which floor is your parking space? <br><br> (E.g. G/F or UB2/F)</div>
+        <div class="floorInput-container">
+          <!-- <input id="spacefloor" pattern="[0-9]*" type="number" max="50" min="0"> -->
+          <input id="spacefloor" type="text" style="text-transform:uppercase">
+          <div class="floorText">/F</div>
+        </div>
+      </div>
+
+      {{/ionContent}}
+    {{/ionView}}
+</template>

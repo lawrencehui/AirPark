@@ -1,0 +1,30 @@
+.add-more {
+  font-family: $main-font-family-bold;
+  text-align: center;
+  font-size: 1.4rem;
+  height: 96px;
+  color: $theme-main-green;
+  line-height: 96px;
+  border-bottom: 1px solid $theme-main-green;
+  cursor: pointer;
+}
+
+.park-rating {
+  @extend %flex-row-container;
+
+  .fa {
+    margin: 4px;
+    font-size: 0.8rem;
+    color: $theme-main-green;
+  }
+}
+
+.delete-space-container {
+  width: 5%;
+  @extend %flex-column-container;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid $theme-main-green;
+  color: $theme-main-green;
+  padding-top: 16px;
+}

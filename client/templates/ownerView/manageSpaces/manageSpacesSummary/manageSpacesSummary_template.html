@@ -1,0 +1,153 @@
+<template name='manageSpacesSummary'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn" path="manageSpacesList"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">{{locationText}}</h1>
+  {{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<div class="summary-top-container">
+				<div class="summary-top-cell view-booking">
+					<div class="summary-top-header">
+						Bookings
+					</div>
+					<div class="summary-top-value">
+						{{noOfBooking}}
+					</div>
+				</div>
+				<div class="summary-top-cell view-booking-upcoming">
+					<div class="summary-top-header">
+						Upcoming
+					</div>
+					<div class="summary-top-value">
+						{{noOfUpcoming}}
+					</div>
+				</div>
+				<!-- <div class="summary-top-cell">
+					<div class="summary-top-header">
+						Edit
+					</div>
+					<div class="summary-button">
+
+					</div>
+				</div> -->
+				<div class="summary-top-cell inactive">
+					<div class="summary-top-header">
+						{{isActive}}
+					</div>
+					<label class="toggle toggle-assertive">
+			    	<input type="checkbox" id="statusToggle">
+		       	<div class="track">
+		         	<div class="handle"></div>
+		       	</div>
+		     	</label>
+				</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">address</div>
+				<div class="summary-content">{{locationText}}</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">floor</div>
+				<div class="summary-content">{{spaceFloor}}</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">no.</div>
+				<div class="summary-content">{{spaceNum}}</div>
+			</div>
+			<div class="summary-location-images-container">
+				<div class="summary-image-cell">
+					<div class="summary-image" style="background-image: url('{{parkingSpaceImg}}')"></div>
+				</div>
+				<div class="summary-image-cell">
+					<div class="summary-image" style="background-image: url('{{parkingBuildingImg}}')"></div>
+				</div>
+				<div class="summary-image-cell">
+					<div class="summary-image" style="background-image: url('{{parkingVerificationImg}}')"></div>
+				</div>
+			</div>
+			<div class="summary-rates-avaliablity">
+				Rates & Availability
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-column-container">
+					<div class="summary-rates-header">
+						Rates
+					</div>
+					<div class="summary-rates-set">
+						{{ratesText}}
+					</div>
+				</div>
+				<div class="summary-column-container summary-avaliablity">
+					<div class="summary-rates-header">
+						Available
+					</div>
+					<div class="summary-rates-set">
+						{{availableText}}
+					</div>
+				</div>
+				<div class="summary-edit">
+					<a href={{ratesAndAvailabilityRoute}}>Edit</a>
+				</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">
+					Who has access
+				</div>
+				<div class="summary-content">
+					{{accessText}}
+				</div>
+				<div class="summary-edit">
+					<a href={{accessRoute}}>Edit</a>
+				</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">
+					Space type
+				</div>
+				<div class="summary-content">
+					{{spaceTypeText}}
+				</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">
+					Parking area
+				</div>
+				<div class="summary-content">
+					{{parkingAreaTypeText}}
+				</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">
+					Instructions
+				</div>
+				<div class="summary-content">
+					{{instructions}}
+				</div>
+			</div>
+			<div class="summary-bottom-container">
+				<div class="summary-header">
+					Remarks
+				</div>
+				<div class="summary-row-container">
+					<div class="summary-remarks-icons">
+						{{#if hasDisableParking}}
+						<div class="icon-wheechai fa fa-wheelchair"></div>
+						{{/if}}
+
+						{{#if hasEVCharger}}
+						<div class="icon-bolt fa fa-bolt"></div>
+						{{/if}}
+
+						{{#if hasOversizeParking}}
+						<div class="icon-truck fa fa-truck"></div>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

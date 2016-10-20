@@ -1,0 +1,42 @@
+<template name='editBankAccount'>
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="cancel"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">bank account</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="buttons button button-clear header-right-btn submit-form-btn" data-form-id="editBankAccount">
+      done
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="bg-color"}}
+      {{#autoForm collection="Profile" id="editBankAccount" type="update" doc=this}}
+      <section class="edit-bankAccount-container table-view-container">
+        <div class="field">
+          <label class="text">
+            Full Name
+          </label>
+					{{> afFieldInput name="bankAccount.name"}}
+        </div>
+				<div class="field">
+          <label class="text">
+            Account Number
+          </label>
+					{{> afFieldInput name="bankAccount.number" type="text"}}
+        </div>
+				<div class="field">
+          <label class="text">
+            Bank Name
+          </label>
+					{{> afFieldInput name="bankAccount.bank"}}
+        </div>
+      </section>
+      {{/autoForm}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

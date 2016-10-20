@@ -1,0 +1,97 @@
+<template name="uploadImagesView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">space images</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="uploadImagesNext" class="button button-clear header-right-btn" >
+
+        {{Next}}
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent}}
+  			<section class="create-space-wrapper">
+  				<div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-07.png');"></div>
+  				<div class="create-space-container">
+            <div class="uploadImagesViewContainer">
+              <div class="divider-text">
+                  You will need to upload images of your parking space.
+              </div>
+
+              <div class="section-title ">
+                  Parking Space Image (required)
+                  {{#with spaceImg}}
+                    <i class="fa fa-check-circle"></i>
+                  {{/with}}
+              </div>
+
+              <div class="section-detail-row">
+                <div class="upload-space-img-btn">
+                  {{#with spaceImg}}
+                    <!-- <img class="uploadedImg" src={{this.url}}> -->
+                      <div class="uploadedImg-background" style="background-image: url('{{this}}')"></div>
+                  {{else}}
+                    <!-- <i class="fa fa-upload fa-2x fa-fw uploadedImg" ></i> -->
+                      <div class="uploadedImg-background-default" style="background-image: url('/images/spaceImageIcon.png')"></div>
+                  {{/with}}
+
+                   <!-- <input type="file" class="choose-file"> -->
+                </div>
+
+                <div class="section-detail-text">
+                  <div>Take a close-up picture of the empty spot to ensure renters know what to look for.</div>
+                </div>
+              </div>
+
+              <div class="section-title">
+                  Carpark Entrance Image (required)
+                  {{#with buildingImg}}
+                    <i class="fa fa-check-circle"></i>
+                  {{/with}}
+              </div>
+
+              <div class="section-detail-row">
+                  <div class="upload-building-img-btn">
+                      {{#with buildingImg}}
+                          <div class="uploadedImg-background" style="background-image: url('{{this}}')"></div>
+                      {{else}}
+                          <div class="uploadedImg-background-default" style="background-image: url('/images/entranceImage.png')"></div>
+                      {{/with}}
+                      <!-- <input type="file" class="choose-file"> -->
+                  </div>
+                  <div class="section-detail-text">
+                      <div>Include a entrance image of the carpark entrance to provide renters additional perspective.</div>
+                  </div>
+              </div>
+
+              <!-- <div class="section-title">
+                  Owner Verification
+                  {{#with verificationImg}}
+                    <i class="fa fa-check-circle"></i>
+                  {{/with}}
+              </div>
+
+              <div class="section-detail-row">
+                  <div class="upload-verification-img-btn">
+                  {{#with verificationImg}}
+                      <div class="uploadedImg-background" style="background-image: url('{{this}}')"></div>
+                  {{else}}
+                      <div class="uploadedImg-background-default" style="background-image: url('/images/ownerVerImage.png')"></div>
+                  {{/with}}
+                  </div>
+                  <div class="section-detail-text">
+                      <div>You would need to submit a Utility Bill / Address Proof to list your parking space. Or skip to do that later.</div>
+                  </div>
+              </div> -->
+            </div>
+          </div>
+        </section>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

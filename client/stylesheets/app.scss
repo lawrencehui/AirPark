@@ -1,0 +1,380 @@
+$main-font-family:         BebasNeue-Regular;
+$main-font-family-bold:    BebasNeue-Bold;
+$main-font-family-light:   BebasNeue-Light;
+$sub-font-family:          Futura;
+
+//$theme-main-green: #58B5BE;
+$theme-main-green: #eb1744;
+$theme-light-red: #f7d2db;
+//$theme-main-green: #32cd32;
+$theme-light-gray: #E5F4F5;
+$theme-black: #000000;
+
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+
+//font-face
+
+@font-face {
+  font-family: BebasNeue-Regular;
+  src: url(/fonts/BebasNeue-Regular.otf);
+}
+
+@font-face {
+  font-family: BebasNeue-Light;
+  src: url(/fonts/BebasNeue-Light.otf);
+}
+
+@font-face {
+  font-family: BebasNeue-Bold;
+  src: url(/fonts/BebasNeue-Bold.otf);
+}
+
+@font-face {
+  font-family: Futura;
+  src: url(/fonts/Futura.ttc);
+}
+
+@mixin main-font-fix($weight:0, $paddingTop: 6px) {
+
+  @if $weight == 0  {
+    font-family: $main-font-family;
+  }
+  @if $weight == bold  {
+    font-family: $main-font-family-bold;
+  }
+  @if $weight == light  {
+    font-family: $main-font-family-light;
+  }
+
+  letter-spacing: 0.05rem;
+  padding-top: $paddingTop;
+}
+
+div.snap-drawer.menu-left.snap-drawer-left {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: auto;
+  background-color: $theme-main-green;
+}
+
+a, a:hover, a:visited, a:active, a:link{
+  text-decoration: none;
+  //color: #ddd;
+  color: inherit;
+}
+
+.bg-color {
+  //height: 100%;
+  //background: #4ca0a7;
+  background: #fff;
+}
+
+.bg-color-green {
+  background-color: $theme-main-green;
+}
+
+.bg-color-light {
+  background-color: #dff1f2;
+}
+
+//header back btn override
+.back-btn.button.back-button {
+  @include main-font-fix(bold, 3px);
+  margin-left: 8px;
+
+  i {
+    //opacity: 0;
+    display: none;
+  }
+}
+
+//header right btn override
+.button.button-clear.header-right-btn {
+  @include main-font-fix(bold, 3px);
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+//navicon override
+.button .icon.ion-navicon {
+  left: -10px;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+label > * {
+    display: block;
+    pointer-events: none;
+}
+
+//flex include
+%flex-bare-container {
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+}
+
+%flex-row-container {
+  @extend %flex-bare-container;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+%flex-column-container {
+  @extend %flex-bare-container;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+$google-red: #D50F25;
+$facebook-blue: #3b5989;
+$default-btn: #6D6D6D;
+
+.bar.bar-dark {
+  background-color: $theme-main-green;
+  //background-color: #000;
+  border-bottom: 0px solid #bbb;
+
+  .button.button-clear {
+    color: #fff;
+  }
+
+  h1.title {
+    letter-spacing: 0.01rem;
+    padding-top: 0px;
+    color: #fff;
+    font-size: 1.4rem;
+    //font-family: Arial;
+    font-family: $sub-font-family;
+    letter-spacing: 0.1rem;
+  }
+}
+
+//iOS9 radio button fix
+.item-radio input {
+  &:checked + .item-content {
+    background: #f7f7f7;
+  }
+
+  &:checked + .radio-icon {
+    visibility: visible;
+  }
+}
+
+
+.bar.bar-theme-green {
+  background-color: #58b5bd;
+  border-color: #58b5bd;
+  font-family: $main-font-family;
+  letter-spacing: 0.5rem;
+  transition: background-color 0.2s linear;
+
+  &:active {
+    background-color: $theme-main-green;
+  }
+}
+
+.title.title-center {
+  @include main-font-fix(bold, 0px);
+  font-size: 2rem;
+  text-align: center;
+}
+
+@mixin absolute-positioning($positioning) {
+  position: absolute;
+
+  @if length($positioning) > 4 {
+    @warn "Invalid input";
+    @return false;
+  }
+
+  $length: length($positioning);
+
+  @if $length == 1 {
+    $value: nth($positioning, 1);
+    top: $value;
+    right: $value;
+    bottom: $value;
+    left: $value;
+  } @else if $length == 2 {
+    $vertValue: nth($positioning, 1);
+    $horiValue: nth($positioning, 2);
+    top: $vertValue;
+    right: $horiValue;
+    bottom: $vertValue;
+    left: $horiValue;
+  } @else if $length == 4 {
+    top: nth($positioning, 1);
+    right: nth($positioning, 2);
+    bottom: nth($positioning, 3);
+    left: nth($positioning, 4);
+  } @else {
+    @warn "Invalid input";
+    @return false;
+  }
+}
+
+@mixin aspect-fit-container($aspectRatio, $maxWidth: 0) {
+  position: relative;
+  line-height: 0;
+
+  @if $maxWidth != 0 {
+    max-width: $maxWidth;
+    max-height: $maxWidth / $aspectRatio;
+  }
+
+  @content;
+
+  &:before {
+    content: '';
+    padding-top: 100% / $aspectRatio;
+    display: inline-block;
+  }
+}
+
+section.table-view-container {
+  @extend %flex-column-container;
+  justify-content: flex-start;
+  padding: 24px 16px;
+
+  .row {
+    @extend %flex-row-container;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    padding: 0;
+
+    &.multi-field-row {
+      .field {
+        margin: 0 8px;
+      }
+
+      .field:first-child {
+        margin-right: 8px;
+        margin-left: 0;
+      }
+
+      .field:last-child {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .text {
+    @include main-font-fix(bold);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .field {
+    @extend %flex-column-container;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 1px solid transparentize($theme-main-green, 0.5);
+      background-color: #fff;
+      padding: 0 8px;
+      font-size: 1rem;
+      font-family: $sub-font-family;
+      color: $theme-main-green;
+    }
+  }
+}
+
+.modal-container {
+  padding: 16px;
+}
+
+.customSpinner-container {
+  width: 100%;
+  height: 100%;
+  @extend %flex-column-container;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgba(0,0,0,0.7);
+
+  .spinner-android {
+    svg {
+      stroke: #eee;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/additionalInfoView/additionalInfoView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/floorAndSpace/floorAndSpace_style.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/floorView/floorView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/inOutDoorView/inOutDoorView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/instructionView/instructionView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/licensePlateView/licensePlateView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/ownerVerification/ownerVerification_style.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/pickLocationView/pickLocationView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/reviewSpaceDetails/reviewSpaceDetails.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/reviewThanks/reviewThanks_style.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/spaceFeatures/spaceFeatures_style.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/spaceNumberView/spaceNumberView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/spaceTypeView/spaceTypeView.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/sumbitReview/sumbitReview_style.scss";
+@import "client/templates/ownerView/manageSpaces/createParkingSpaceFlow/uploadImagesView/uploadImagesView.scss";
+@import "client/templates/ownerView/manageOwnerBookings/bookingRecordList/bookingRecordList.scss";
+@import "client/templates/ownerView/manageOwnerBookings/viewBookingRecord/viewBookingRecord.scss";
+@import "client/templates/ownerView/manageSpaces/access/access_style.scss";
+@import "client/templates/ownerView/manageSpaces/availability/availability_style.scss";
+@import "client/templates/ownerView/manageSpaces/customAvailability/customAvailability_style.scss";
+@import "client/templates/ownerView/manageSpaces/customGroup/customGroup_style.scss";
+@import "client/templates/ownerView/manageSpaces/manageSpacesList/manageSpacesList.scss";
+@import "client/templates/ownerView/manageSpaces/manageSpacesSummary/manageSpacesSummary_style.scss";
+@import "client/templates/ownerView/manageSpaces/priceSettings/priceSettings_style.scss";
+@import "client/templates/ownerView/manageSpaces/ratesAndAvailability/ratesAndAvailability_style.scss";
+@import "client/templates/userView/myGarage/addCar/addCar_style.scss";
+@import "client/templates/userView/myGarage/editCar/editCar_style.scss";
+@import "client/templates/userView/search/bookingConfirmation/bookingConfirmation_style.scss";
+@import "client/templates/userView/search/bookingDetails/bookingDetails.scss";
+@import "client/templates/userView/search/bookingReceipt_after/bookingReceipt_after.scss";
+@import "client/templates/userView/search/bookingReceipt_ongoing/bookingReceipt_ongoing.scss";
+@import "client/templates/userView/search/bookingThanks/bookingThanks_style.scss";
+@import "client/templates/userView/search/buildingList/buildingList.scss";
+@import "client/templates/userView/search/calenderDropdown/calenderDropdown_style.scss";
+@import "client/templates/userView/search/home/home.scss";
+@import "client/templates/userView/search/old_parkingSpaceDetails/parkingSpaceDetails.scss";
+@import "client/templates/userView/search/selectCar/selectCar_style.scss";
+@import "client/templates/userView/search/selectCreditCard/selectCreditCard_style.scss";
+@import "client/templates/layout/connectionStatusBanner/connectionStatusBanner.scss";
+@import "client/templates/loginView/editBankAccount/editBankAccount_style.scss";
+@import "client/templates/loginView/editProfile/editProfile.scss";
+@import "client/templates/loginView/forgotPassword/forgotPassword.scss";
+@import "client/templates/loginView/loginMain/loginMain.scss";
+@import "client/templates/reportIssue/reportFinish/reportFinish_style.scss";
+@import "client/templates/reportIssue/reportIssueType/reportIssueType_style.scss";
+@import "client/templates/reportIssue/reportPhotoProof/reportPhotoProof_style.scss";
+@import "client/templates/userView/accountBalance/accountBalance_style.scss";
+@import "client/templates/userView/addBankAccountDetails/addBankAccountDetails_style.scss";
+@import "client/templates/userView/addCreditCard/addCreditCard_style.scss";
+@import "client/templates/userView/myGarage/myGarage_style.scss";
+@import "client/templates/userView/paymentMethods/paymentMethods_style.scss";
+@import "client/templates/userView/payoutHistory/payoutHistory_style.scss";
+@import "client/templates/userView/payoutMethods/payoutMethods_style.scss";
+@import "client/templates/userView/requestPayout/requestPayout_style.scss";
+@import "client/templates/userView/transactionHistory/transactionHistory_style.scss";
+@import "client/templates/userView/userBookings/userBookingRecordList.scss";
+@import "client/templates/userView/wallet/wallet_style.scss";
+@import "client/templates/layout/layout.scss";

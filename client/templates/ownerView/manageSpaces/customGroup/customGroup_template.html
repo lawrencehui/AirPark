@@ -1,0 +1,72 @@
+<template name='customGroup'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn customGroup-back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">guests</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="customGroupSave" class="button button-clear header-right-btn" >
+			Save
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="custom-group-container">
+				<!-- <div class="cell">
+					<div class="access-text">Family</div>
+					<label class="checkbox checkbox-assertive">
+						<input type="checkbox" name="customGroup" id="familyGroup">
+					</label>
+				</div>
+				<div class="cell">
+					<div class="access-text">Friends</div>
+					<label class="checkbox checkbox-assertive">
+						<input type="checkbox" name="customGroup" id="friendsGroup">
+					</label>
+				</div>
+				<div class="cell">
+					<div class="access-text">Others</div>
+					<label class="checkbox checkbox-assertive">
+						<input type="checkbox" name="customGroup" id="othersGroup">
+					</label>
+				</div> -->
+				<div class="invite-people">
+					invite people
+				</div>
+				<!-- <div class="select-container">
+					<select class="select-group" name="" id="selectGroup">
+						<option value=0>Family</option>
+						<option value=1>Friends</option>
+						<option value=2>Others</option>
+					</select>
+				</div> -->
+				<input type="email" name="name" id="groupEmailInput" value="" placeholder="Enter Email Address">
+				<div class="invite-button">
+					Invite
+				</div>
+				<!-- <div class="group-header">
+					{{groupHeader}}
+				</div> -->
+				<div class="group-list">
+					{{#each guestList}}
+						<div class="row">
+							<!-- <div class="name">
+								Jane Chan
+							</div> -->
+							<div class="email">
+								{{this.email}}
+							</div>
+							<div class="delete">
+								Delete
+							</div>
+						</div>
+					{{/each}}
+				</div>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

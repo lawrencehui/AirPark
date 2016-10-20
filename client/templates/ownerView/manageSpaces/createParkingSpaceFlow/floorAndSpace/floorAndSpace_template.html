@@ -1,0 +1,40 @@
+<template name='floorAndSpace'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">floor & space</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="floorSpaceNext" class="button button-clear header-right-btn" >
+			{{Next}}
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="create-space-wrapper">
+				<div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-02.png');"></div>
+				<div class="create-space-container">
+					<div class="floorSpace-container">
+						<div class="divider-text">The floor of your parking space</div>
+						<div class="floorSpaceInput-container">
+							<!-- <input id="spacefloor" pattern="[0-9]*" type="number" max="50" min="0"> -->
+							<input id="spacefloor" type="text" style="text-transform:uppercase" placeholder="e.g. G/F or UB 2/F">
+							<!-- <div class="floorText">/F</div> -->
+						</div>
+					</div>
+
+					<div class="floorSpace-container">
+						<div class="divider-text">Number/ID for your parking space</div>
+						<div class="floorSpaceInput-container">
+							<input id="spaceNumber" type="text" placeholder="e.g. A203" style="text-transform:uppercase">
+						</div>
+					</div>
+				</div>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

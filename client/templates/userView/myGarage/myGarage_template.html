@@ -1,0 +1,45 @@
+<template name='myGarage'>
+	{{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left left-padding" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding">my garage</h1>
+  {{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="myGarage-container">
+				{{#each this.garages}}
+				<div class="garage-cell">
+					<div class="garage-content">
+						<div class="garage-label">
+							car model
+						</div>
+						<div class="garage-value">
+							{{this.model}}
+						</div>
+					</div>
+					<div class="garage-content">
+						<div class="garage-label">
+							license plate
+						</div>
+						<div class="garage-value">
+							{{this.number}}
+						</div>
+					</div>
+					<div class="garage-edit-button" value={{@index}}>
+						<span class="edit">edit</span>
+						<span class="fa fa-angle-right"></span>
+					</div>
+				</div>
+				{{/each}}
+				<div class="add-car-button">
+					<a href="/addCar">+add another car</a>
+				</div>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

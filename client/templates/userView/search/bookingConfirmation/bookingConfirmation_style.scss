@@ -1,0 +1,119 @@
+.bookingDetails-container{
+  .confirm-top-container {
+    width: 100%;
+    height: 88px;
+    border-bottom: 1px solid $theme-main-green;
+    @extend %flex-row-container;
+
+    .confirm-image {
+      // flex: 1 0 0;
+      width: 33%;
+      height: 88px;
+
+      background: center no-repeat;
+      background-size: cover;
+    }
+
+    .confirm-address {
+      width: 67%;
+      height: 88px;
+      @extend %flex-column-container;
+      justify-content: space-around;
+      align-items: stretch;
+      padding: 16px;
+
+      .address-top-container,
+      .address-bottom-container,
+      .floor,
+      .space-no {
+        flex: 1 0 0;
+        @extend %flex-row-container;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+
+    .address-label {
+      @include main-font-fix(bold);
+      font-size: 0.7rem;
+    }
+
+    .address-text {
+      font-family: Futura;
+      font-size: 0.9rem;
+      margin-top: 4px;
+      margin-left: 16px;
+      height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  span.fa-angle-right {
+    float: right;
+    color: $theme-main-green;
+    font-size: 1.6rem;
+  }
+
+  span.cc-type-icon {
+    float: left;
+    // color: $theme-main-green;
+    font-size: 1.6rem;
+    margin-right: 16px;
+  }
+
+  .booking-refund {
+    margin-top: 40px;
+    font-family: Futura;
+    font-size: 1rem;
+
+    span {
+      text-decoration: underline;
+      color: $theme-main-green;
+    }
+  }
+
+  .booking-agreement {
+    margin-top: 8px;
+    font-family: Futura;
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+    @extend %flex-row-container;
+    justify-content: flex-start;
+    align-items: center;
+
+    .booking-agreement-text {
+      margin-left: 8px;
+    }
+
+    span {
+      text-decoration: underline;
+      color: $theme-main-green;
+    }
+  }
+}
+
+.bookingDetails-container {
+  .details-col-container.booking-confirm-container {
+    height: calc(100% - 132px);
+  }
+}
+
+.confirmBookingButton {
+  width: 100%;
+  height: 44px;
+  background-color: $theme-main-green;
+  color: #FFF;
+  text-align: center;
+  @include main-font-fix(bold);
+  line-height: 44px;
+  padding-top: 3px;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+
+  &:active {
+    background-color: darken($theme-main-green, 10);
+  }
+}

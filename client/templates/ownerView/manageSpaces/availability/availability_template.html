@@ -1,0 +1,143 @@
+<template name='availability'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn availability-back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">availability</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="availabilitySave" class="button button-clear header-right-btn" >
+			Save
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="availability-container">
+				<div class="weekday-container">
+					{{#each weekdayIndex}}
+						<div class="weekday-cell {{isChecked @index}}" data-type="{{@index}}">
+							<div class="weekday">{{getWeekdayText @index}}</div>
+							<div class="weekdat-bottom-line"></div>
+						</div>
+					{{/each}}
+				</div>
+				<div class="duration-container">
+					<div class="duration-cell">
+						<div class="title">Set recurring pattern until the listing is turned off</div>
+						<label class="checkbox checkbox-assertive">
+							<input type="radio" name="isWeek" id="isForever">
+						</label>
+					</div>
+					<div class="duration-cell">
+						<div class="title">Set for this week</div>
+						<label class="checkbox checkbox-assertive">
+							<input type="radio" name="isWeek" id="isWeek">
+						</label>
+					</div>
+					<div class="duration-cell">
+						<div class="title">Set for this month</div>
+						<label class="checkbox checkbox-assertive">
+							<input type="radio" name="isWeek" id="isMonth">
+						</label>
+					</div>
+				</div>
+				<div class="cell-wrapper">
+					<div class="cell-container">
+						<div class="cell">
+							<label class="checkbox checkbox-assertive">
+								<input type="checkbox" name="group" id="setHours">
+							</label>
+							<div class="title">Set hours of the day</div>
+						</div>
+						<div class="moving-container" id="setHoursInput">
+							<div class="grey-cell">
+								<div class="weekday-text"></div>
+								<div class="checkbox-container">
+									<div class="checkbox-container-row">
+										<div class="checkbox-cell">
+											<div class="checkbox-text">Day parking</div>
+											<input class="availability-checkbox" type="checkbox" name="All" data-type="1" {{isDisabled 0}}>
+										</div>
+										<div class="checkbox-cell">
+											<div class="checkbox-text">Night parking</div>
+											<input class="availability-checkbox" type="checkbox" name="All" data-type="2" {{isDisabled 1}}>
+										</div>
+										<div class="checkbox-cell">
+											<div class="checkbox-text">All day</div>
+											<input class="availability-checkbox" type="checkbox" name="All" data-type="3" {{isDisabled 2}}>
+										</div>
+									</div>
+									<div class="checkbox-cell">
+										<div class="checkbox-text">9am to 5pm</div>
+										<input class="availability-checkbox" type="checkbox" name="All" data-type="4" {{isDisabled 3}}>
+									</div>
+								</div>
+								<!-- <div class="weekday-text"></div>
+								<div class="text">from</div>
+								<select class="startTime" name="" id="allStartTime">
+									{{#each timeSlot}}
+										<option value={{@index}} {{isSelectedStart @index}} {{isDisabledStart @index}}>{{this}}</option>
+									{{/each}}
+								</select>
+								<div class="text">to</div>
+								<select class="endTime" name="" id="allEndTime">
+									{{#each timeSlot}}
+										<option value={{@index}} {{isSelectedEnd @index}} {{isDisabledEnd @index}}>{{this}}</option>
+									{{/each}}
+								</select> -->
+							</div>
+							<div class="specific-cell-container">
+								<div class="cell">
+									<label class="checkbox checkbox-assertive">
+										<input type="checkbox" name="group" id="setSpecificHours">
+									</label>
+									<div class="title">Change for specific days</div>
+								</div>
+								<div class="specific-grey-cell-container">
+									{{#each weekdayAvailable}}
+										<div class="grey-cell specific-grey-cell">
+											<div class="weekday-text">{{getWeekdayText this}}</div>
+											<div class="checkbox-container">
+												<div class="checkbox-container-row">
+													<div class="checkbox-cell">
+														<div class="checkbox-text">Day parking</div>
+														<input class="availability-checkbox" type="checkbox" name={{this}} data-type="1" {{isDisabled 0}}>
+													</div>
+													<div class="checkbox-cell">
+														<div class="checkbox-text">Night parking</div>
+														<input class="availability-checkbox" type="checkbox" name={{this}} data-type="2" {{isDisabled 1}}>
+													</div>
+													<div class="checkbox-cell">
+														<div class="checkbox-text">All day</div>
+														<input class="availability-checkbox" type="checkbox" name={{this}} data-type="3" {{isDisabled 2}}>
+													</div>
+												</div>
+												<div class="checkbox-cell">
+													<div class="checkbox-text">9am to 5pm</div>
+													<input class="availability-checkbox" type="checkbox" name={{this}} data-type="4" {{isDisabled 3}}>
+												</div>
+											</div>
+										</div>
+									{{/each}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availability-button-container">
+					<div class="availability-button" id="save-availability-button">
+						Save default
+					</div>
+					<div class="availability-button" id="use-availability-button">
+						Use default
+					</div>
+				</div>
+			</section>
+
+
+		{{/ionContent}}
+	{{/ionView}}
+</template>

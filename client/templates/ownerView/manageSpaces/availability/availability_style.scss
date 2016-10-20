@@ -1,0 +1,242 @@
+section.availability-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .weekday-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    @extend %flex-row-container;
+    justify-content: space-around;
+    align-items: center;
+    // padding: 24px;
+    width: 100%;
+    z-index: 10000;
+    background-color: #FFF;
+
+    .weekday-cell {
+      @extend %flex-column-container;
+      justify-content: center;
+      align-items: center;
+      width: 10%;
+
+      .weekday {
+        @include main-font-fix();
+        font-size: 0.9rem;
+        color: $theme-light-red;
+      }
+
+      .weekdat-bottom-line {
+        // display: none;
+        width: 80%;
+        border: 2px solid #FFF;
+        border-radius: 2px;
+      }
+
+      &.checked {
+        .weekday {
+          color: $theme-main-green;
+        }
+        .weekdat-bottom-line {
+          border: 2px solid $theme-main-green;
+        }
+      }
+    }
+  }
+
+  .duration-container {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 168px;
+  }
+
+  .cell-wrapper {
+    position: absolute;
+    top: 248px;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    overflow-y: scroll;
+  }
+
+  .cell-container {
+    position: relative;
+    // height: auto;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .cell,
+  .duration-cell {
+    height: 56px;
+    background-color: #FFF;
+    @extend %flex-row-container;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 24px;
+    width: 100%;
+    margin: 0;
+
+    label.checkbox {
+      flex: 1 0 0;
+    }
+
+    .title {
+      font-family: $sub-font-family;
+      font-size: 1rem;
+      flex: 4 0 0;
+    }
+  }
+
+  .cell {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 1px 6px 0 #666;
+
+    label.checkbox {
+      margin-left: 8px;
+    }
+  }
+
+  .duration-cell {
+    .title {
+      font-family: $sub-font-family;
+      font-size: 1rem;
+      flex: 4 0 0;
+      margin-left: 8px;
+    }
+  }
+
+  .moving-container {
+    @extend %flex-column-container;
+    position: absolute;
+    top: -58px;
+    left: 0;
+    right: 0;
+    transition: top 0.4s;
+
+    &.checked {
+      top: 56px;
+    }
+  }
+
+  .grey-cell {
+    height: 56px;
+    background-color: $theme-light-gray;
+    @extend %flex-row-container;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    text-align: center;
+    z-index: 10;
+
+    .weekday-text {
+      width: 10%;
+      // height: 100%;
+    }
+
+    // .text {
+    //   width: 15%;
+    //   @include main-font-fix();
+    //   font-size: 1rem;
+    //   padding-top: 2px;
+    //   color: #5bb4c6;
+    // }
+
+    .checkbox-container {
+      width: 85%;
+      @extend %flex-column-container;
+      // flex-wrap: wrap;
+      justify-content: flex-start;
+
+      .checkbox-container-row {
+        @extend %flex-row-container;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .checkbox-cell {
+        @extend %flex-row-container;
+        align-items: flex-end;
+        // width: 33%;
+
+        .checkbox-text {
+          font-family: $sub-font-family;
+          font-size: 0.8rem;
+        }
+
+        input[type="checkbox"] {
+          margin-left: 4px;
+          margin-top: 3px;
+        }
+      }
+    }
+
+    input {
+      // width: 15%;
+      font-family: $sub-font-family;
+      font-size: 1.1rem;
+      background-color: $theme-light-gray;
+      // margin: 0 8px;
+      padding: 0;
+      text-align: center;
+      // width: 64px;
+    }
+  }
+  .specific-cell-container {
+    margin-top: 2px;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    // height: 56px;
+
+    .specific-grey-cell-container {
+      position: absolute;;
+      bottom: -58px;
+      left: 0;
+      right: 0;
+      top: auto;
+
+      &.checked {
+        top: 58px;
+        bottom: auto;
+        transition: top 0.4s, bottom 0.4s;
+      }
+    }
+
+    .specific-grey-cell {
+      margin-bottom: 2px;
+    }
+  }
+
+  .availability-button-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    height: 40px;
+    @extend %flex-row-container;
+    justify-content: space-between;
+    background-color: #FFF;
+
+    .availability-button {
+      width: calc(50% - 1px);
+      background-color: $theme-main-green;
+      @extend %flex-row-container;
+      justify-content: center;
+      align-items: center;
+      color: #FFF;
+      @include main-font-fix();
+      font-size: 1.2rem;
+    }
+  }
+}

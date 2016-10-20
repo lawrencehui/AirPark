@@ -1,0 +1,81 @@
+<template name='ownerVerification'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">owner verification</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="uploadImagesDone" class="button button-clear header-right-btn" >
+			{{Done}}
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent}}
+			<section class="create-space-wrapper">
+				<div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-08.png');"></div>
+				<div class="create-space-container">
+					<div class="ownerVerificationViewContainer">
+						<div class="divider-text">
+								almost there!
+						</div>
+
+						<div class="section-title">
+								Owner Verification
+								{{#with verificationImg}}
+									<i class="fa fa-check-circle"></i>
+								{{/with}}
+						</div>
+
+						<div class="section-detail-row">
+							<div class="upload-verification-img-btn">
+							{{#with verificationImg}}
+									<div class="uploadedImg-background" style="background-image: url('{{this}}')"></div>
+							{{else}}
+									<div class="uploadedImg-background-default" style="background-image: url('/images/ownerVerImage.png')"></div>
+							{{/with}}
+							</div>
+							<div class="section-detail-text">
+									<div>Submit a picture of the utility bill / address proof of the parking space (or the building) that you are listing.</div>
+							</div>
+						</div>
+					</div>
+					{{#unless editing}}
+						<div class="privacy-policy">
+							<input type="checkbox" name="privacyCheckbox" value="">
+							<div class="privacy-text">
+								I have read the <a data-ion-modal="_privacyModal">Privacy Policy</a> and understand my rights contained in the policy.
+							</div>
+						</div>
+					{{/unless}}
+				</div>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>
+
+<template name="_privacyModal">
+	{{#ionModal title="Privacy Policy"}}
+		<div class="modal-container">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum lorem vel quam consequat, ut lacinia tortor fringilla. Suspendisse ullamcorper, lectus id faucibus viverra, risus mi convallis velit, non facilisis mi arcu eget mi. Donec rutrum sapien a leo vestibulum, dictum tincidunt urna tempor. Suspendisse lorem urna, pellentesque sed odio id, sagittis rutrum nibh. Nam in sem turpis. In non eros ullamcorper, pharetra augue nec, accumsan lorem. Vivamus convallis at ex mattis cursus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+			</p>
+			<p>
+				Proin blandit nibh ac ultricies fringilla. Proin quis nisl nec risus luctus sagittis vel pretium lectus. Donec pretium congue tellus a maximus. Quisque ullamcorper lacus sed magna rutrum interdum. Sed justo sapien, consequat a luctus sit amet, sodales eu sem. Aenean eget accumsan purus. Nulla facilisi. Mauris vitae pretium justo. Phasellus id nisi vestibulum, dignissim tortor varius, dignissim ipsum. Etiam vel laoreet eros. Suspendisse at ligula lorem.
+			</p>
+			<p>
+				Pellentesque in elit at lacus lacinia lobortis ut vel nisi. Praesent venenatis faucibus diam, ac venenatis risus. Aliquam nec tempus diam, eleifend hendrerit mauris. Cras vitae fermentum sem. Nulla vehicula nulla orci. Integer efficitur sapien hendrerit, posuere est quis, gravida turpis. Duis nec ante faucibus lectus pretium ullamcorper tincidunt eu nibh. Vestibulum at nunc eget diam interdum condimentum vitae in dolor.
+			</p>
+			<p>
+				Interdum et malesuada fames ac ante ipsum primis in faucibus. In feugiat, erat in aliquam tincidunt, augue dui rhoncus nunc, eu eleifend sem orci nec nisi. Integer commodo id dui non rhoncus. Proin ligula leo, volutpat vitae sem eu, accumsan blandit nunc. Donec ac maximus massa, nec vulputate turpis. Sed massa mauris, cursus eu tempor ac, lacinia at ante. Nunc congue sit amet est eget porta. Maecenas fermentum a augue at accumsan. Suspendisse at porta turpis, vitae maximus felis. Aenean et congue magna. Nullam luctus fringilla purus id bibendum.
+			</p>
+			<p>
+				Etiam id efficitur dui, in cursus purus. Morbi in rutrum neque. Ut ac luctus massa. Aenean tincidunt felis ac cursus pellentesque. In hac habitasse platea dictumst. Vivamus convallis cursus enim, nec semper mauris luctus nec. Pellentesque eget sodales neque, dignissim pellentesque ipsum. Quisque commodo nec turpis id ultricies. Donec consectetur nisl id scelerisque aliquet. Nam non risus in nunc vulputate dapibus et vitae nisi. Etiam pretium leo id enim elementum vestibulum. Integer a laoreet magna, at hendrerit erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse gravida nibh ipsum, nec aliquam tortor iaculis vel. Mauris venenatis enim vitae neque tempor vestibulum.
+			</p>
+			<button type="button" name="button" data-dismiss=modal>OK</button>
+		</div>
+	{{/ionModal}}
+</template>

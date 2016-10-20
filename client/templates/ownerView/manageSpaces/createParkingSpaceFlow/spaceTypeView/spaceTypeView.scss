@@ -1,0 +1,32 @@
+.spaceTypeView-container{
+  @extend %flex-column-container;
+  justify-content: center;
+  align-items: stretch;
+  //margin-top: 8vh;
+
+  .divider-text {
+    @include main-font-fix(bold);
+    text-align: center;
+    color: $theme-main-green;
+    font-size: 1.4rem;
+    padding: 10% 16%;
+  }
+
+  .spaceTypeViewInput-container {
+    @extend %flex-row-container;
+    justify-content: center;
+    align-items: center;
+    font-family: Futura;
+
+
+    .card.no-margin {
+      width: 100%;
+
+      .radio-icon.ion-ios-checkmark.custom-radio-size {
+        color: $theme-main-green;
+        font-size: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+}

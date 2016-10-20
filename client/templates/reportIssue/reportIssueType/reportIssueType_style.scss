@@ -1,0 +1,31 @@
+.report-container {
+  width: 100%;
+  @extend %flex-column-container;
+  align-items: flex-start;
+  padding: 16px;
+
+  .report-header {
+    margin-bottom: 8px;
+    align-self: center;
+  }
+
+  .report-text {
+    margin-bottom: 8px;
+    padding: 16px;
+  }
+
+  .report-radio-row {
+    width: 100%;
+    @extend %flex-row-container;
+    align-items: flex-start;
+
+    .row-content {
+      @extend %flex-column-container;
+      margin-left: 8px;
+
+      input {
+        border: 2px inset;
+      }
+    }
+  }
+}

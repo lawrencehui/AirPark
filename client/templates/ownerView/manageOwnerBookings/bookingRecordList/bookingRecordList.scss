@@ -1,0 +1,160 @@
+.booking-records-container {
+  @extend %flex-column-container;
+  justify-content: flex-start;
+  align-items: stretch;
+  font-family: Futura;
+  color: $theme-black;
+  width: 100%;
+  margin-top: 32px;
+  border-top: 1px solid $theme-main-green;
+
+  .add-more {
+    font-family: $main-font-family-bold;
+    text-align: center;
+    font-size: 1.4rem;
+    height: 96px;
+    color: $theme-main-green;
+    line-height: 96px;
+    border-bottom: 1px solid $theme-main-green;
+    cursor: pointer;
+  }
+
+  .booking-records-cell {
+    @extend %flex-row-container;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    cursor: pointer;
+    min-height: 96px;
+
+    .verification-row {
+      padding-bottom: 8px;
+      i.fa.fa-exclamation-circle {
+        color: $theme-main-green;
+      }
+    }
+
+    .booking-records-image {
+      // flex: 3 0 0;
+      width: 30%;
+      background-position: center;
+      background-size: cover;
+      border-right: 1px solid $theme-main-green;
+      border-bottom: 1px solid $theme-main-green;
+      //height: 100%;
+    }
+
+    .booking-records-content {
+      // flex: 7 0 0;
+      width: 65%;
+      @extend %flex-column-container;
+      padding: 12px;
+      padding-left: 14px;
+      //padding-left: 20px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border-bottom: 1px solid $theme-main-green;
+      // width: 100%;
+
+      .park-name-row {
+        @extend %flex-row-container;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .park-name {
+          width: 100%;
+          font-size: 1.2rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.2;
+          font-family: $main-font-family-bold;
+          flex: 8 0 0;
+        }
+
+        .cancelIcon {
+          flex: 2 0 0;
+          color: $theme-main-green;
+          text-align: right;
+          margin-top: -18px;
+          font-size: 1.4rem;
+        }
+
+
+      }
+
+      .lower-contents {
+        //margin-top: 12px;
+        width: 100%;
+      }
+
+      .lower-container {
+        width: 100%;
+        @extend %flex-row-container;
+        font-size: 1rem;
+
+        .empty-first-row {
+          flex: 0.2 0 0;
+        }
+        .empty-second-row {
+          flex: 1 0 0;
+        }
+
+        .park-floor,
+        .park-rating {
+          flex: 1 0 0;
+          @extend %flex-row-container;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+
+          .park-floor-title,
+          .park-rating-title {
+            font-family: $main-font-family;
+            font-size: 1rem;
+            flex: 2 0 0;
+          }
+
+          .park-floor-content,
+          .park-rating-content {
+            color: $theme-main-green;
+            font-size: 1rem;
+            flex: 3 0 0;
+          }
+
+          .empty-inside {
+            flex: 1 0 0;
+          }
+        }
+
+
+        .park-spaceId{
+          //flex: 1 0 0;
+          @extend %flex-row-container;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+
+          .park-spaceId-title {
+            font-family: $main-font-family;
+            font-size: 1rem;
+            flex: 2 0 0;
+          }
+
+          .park-spaceId-content {
+            color: $theme-main-green;
+            font-size: 1rem;
+            flex: 7 0 0;
+          }
+
+          .empty-inside {
+            flex: 0.1 0 0;
+          }
+
+
+        }
+      }
+    }
+  }
+}

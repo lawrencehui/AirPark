@@ -1,0 +1,99 @@
+section.access-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .group-container {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+  }
+
+  .cell {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    height: 56px;
+    background-color: #FFF;
+    @extend %flex-row-container;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 32px;
+    width: 100%;
+    box-shadow: 0 2px 2px 0 #666;
+    border-top: 1px solid #999;
+    margin: 0;
+  }
+
+  label.checkbox {
+    flex-shrink: 0;
+    // margin-right: 8px;
+  }
+
+  .access-text {
+    font-family: $sub-font-family;
+    font-size: 1rem;
+    flex: 1 0 0;
+  }
+
+  .group-wrapper {
+    width: 100%;
+    position: relative;
+
+    .moving-container {
+      position: absolute;
+      top: -116px;
+      left: 0;
+      right: 0;
+      @extend %flex-column-container;
+      transition: top 0.4s;
+      z-index: 1;
+
+      &.checked {
+        top: 56px;
+      }
+
+      .grey-cell {
+        height: 56px;
+        background-color: $theme-light-gray;
+        @extend %flex-row-container;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 24px;
+        text-align: center;
+        z-index: 0;
+        margin-top: 2px;
+
+        .group-text {
+          font-family: $sub-font-family;
+          font-size: 1rem;
+          margin-left: 32px;
+        }
+      }
+
+      .custom-cell {
+        height: 56px;
+        background-color: #FFF;
+        @extend %flex-row-container;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 32px;
+        width: 100%;
+        box-shadow: 0 1px 6px 0 #666;
+        margin: 0;
+
+        .custom-groups-edit {
+          flex-shrink: 0;
+          font-family: $sub-font-family;
+          margin: 16px;
+          color: $theme-main-green;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+}

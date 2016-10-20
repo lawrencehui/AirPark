@@ -1,0 +1,146 @@
+.summary-top-container {
+  width: 100%;
+  height: 72px;
+  @extend %flex-row-container;
+  justify-content: space-between;
+  font-family: BebasNeue-Bold;
+  line-height: normal;
+  border-top: 1px solid #FFF;
+  margin-top: 1px;
+
+  .summary-top-cell {
+    flex: 1 0 0;
+    height: 100%;
+    @extend %flex-column-container;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $theme-main-green;
+    border-left: 1px solid #FFF;
+    background-color: $theme-main-green;
+    color: #FFF;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    .summary-top-header {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .summary-top-value {
+      font-size: 1.3rem;
+    }
+
+    &.inactive {
+      background-color: $theme-light-red;
+      color: $theme-main-green;
+
+      .summary-top-header {
+        margin-bottom: 0;
+        margin-top: 8px;
+      }
+    }
+
+    .summary-button {
+    }
+  }
+}
+
+.summary-bottom-container {
+  width: 100%;
+  @extend %flex-row-container;
+  justify-content: flex-start;;
+  align-items: baseline;
+  font-family: BebasNeue-Bold;
+  line-height: normal;
+  padding: 15px;
+  margin-left: 16px;
+  border-bottom: 1px solid $theme-light-red;
+
+  .summary-header {
+    width: 100px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    padding-top: 1px;
+    // padding: 12px;
+    // border: 1px solid $theme-main-green;
+  }
+
+  .summary-content {
+    font-size: 1rem;
+    flex: 1 0 0;
+    font-family: Futura;
+    // padding: 12px;
+  }
+
+  .summary-edit {
+    margin-right: 32px;
+    color: $theme-main-green;
+    font-size: 0.7rem;
+    font-family: Futura;
+  }
+
+  .summary-column-container {
+    width: 100px;
+    @extend %flex-column-container;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+
+    &.summary-avaliablity {
+      flex: 1 0 0;
+    }
+
+    .summary-rates-header {
+
+    }
+
+    .summary-rates-set,
+    .summary-access {
+      font-size: 1rem;
+      font-family: Futura;
+
+    }
+
+    .summary-remarks-icons {
+      @extend %flex-row-container;
+      justify-content: flex-start;
+      align-items: flex-start;
+      color: $theme-main-green;
+      font-size: 1.2rem;
+
+      .fa {
+        //flex: 1 0 0;
+        padding-right: 16px;
+        //text-align: center;
+      }
+    }
+  }
+}
+
+.summary-location-images-container {
+  width: calc(100% - 32px);
+  margin: 16px;
+  padding: 0 8px;
+  @extend %flex-row-container;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  .summary-image-cell {
+    width: 30%;
+    @include aspect-fit-container(1);
+
+    .summary-image {
+      @include absolute-positioning(0);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
+.summary-rates-avaliablity {
+  font-family: BebasNeue-Bold;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin: 32px 0 4px 31px;
+}

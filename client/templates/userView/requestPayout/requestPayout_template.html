@@ -1,0 +1,70 @@
+<template name='requestPayout'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn" text="back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title title-left-padding title-center">request a payout</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+    {{#ionContent class="bg-color"}}
+		<div class="request-acct-balance-row">
+			<div class="total-label">Account Balance</div>
+			<div class="total-amount">HK${{accountBalance}}</div>
+		</div>
+		<div class="request-note-row">
+			<div class="note-label">Note</div>
+			<div class="note-details">The minimum payout is HK${{minPayout}} in order to cover bank transfer fee.</div>
+		</div>
+		<div class="request-select-bank-acct-container">
+			<div class="request-select-an-account-row">
+				Select an account
+			</div>
+			{{#each bankAccounts}}
+				<div class="bank-account-row">
+					<label class="checkbox checkbox-assertive">
+						<input class="selectedBankAccountCheckbox" data-index={{@index}} type="radio" name="group" checked={{isChecked @index}}>
+					</label>
+					<div class="bank-name">{{this.name}}</div>
+					<div class="bank-acct-no">{{this.accountNo}}</div>
+				</div>
+			{{/each}}
+		</div>
+		<div class="bank-charge-remarks-row">
+			A transaction fee of xx% is charged for each bank transfer.
+		</div>
+		<div class="agreement-row">
+			<label class="checkbox checkbox-assertive">
+				<input id="requestAgreementCheckbox" type="checkbox" name="agreement" checked>
+			</label>
+			<div class="agreement-text">I have reviewed and agree with 2park's <span data-ion-modal="_ownerAgreementModal">Owner Agreement</span></div>
+		</div>
+  	<div class="request-confirm-btn">confirm payout</div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>
+
+<template name="_ownerAgreementModal">
+	{{#ionModal title="Privacy Policy"}}
+		<div class="modal-container">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum lorem vel quam consequat, ut lacinia tortor fringilla. Suspendisse ullamcorper, lectus id faucibus viverra, risus mi convallis velit, non facilisis mi arcu eget mi. Donec rutrum sapien a leo vestibulum, dictum tincidunt urna tempor. Suspendisse lorem urna, pellentesque sed odio id, sagittis rutrum nibh. Nam in sem turpis. In non eros ullamcorper, pharetra augue nec, accumsan lorem. Vivamus convallis at ex mattis cursus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+			</p>
+			<p>
+				Proin blandit nibh ac ultricies fringilla. Proin quis nisl nec risus luctus sagittis vel pretium lectus. Donec pretium congue tellus a maximus. Quisque ullamcorper lacus sed magna rutrum interdum. Sed justo sapien, consequat a luctus sit amet, sodales eu sem. Aenean eget accumsan purus. Nulla facilisi. Mauris vitae pretium justo. Phasellus id nisi vestibulum, dignissim tortor varius, dignissim ipsum. Etiam vel laoreet eros. Suspendisse at ligula lorem.
+			</p>
+			<p>
+				Pellentesque in elit at lacus lacinia lobortis ut vel nisi. Praesent venenatis faucibus diam, ac venenatis risus. Aliquam nec tempus diam, eleifend hendrerit mauris. Cras vitae fermentum sem. Nulla vehicula nulla orci. Integer efficitur sapien hendrerit, posuere est quis, gravida turpis. Duis nec ante faucibus lectus pretium ullamcorper tincidunt eu nibh. Vestibulum at nunc eget diam interdum condimentum vitae in dolor.
+			</p>
+			<p>
+				Interdum et malesuada fames ac ante ipsum primis in faucibus. In feugiat, erat in aliquam tincidunt, augue dui rhoncus nunc, eu eleifend sem orci nec nisi. Integer commodo id dui non rhoncus. Proin ligula leo, volutpat vitae sem eu, accumsan blandit nunc. Donec ac maximus massa, nec vulputate turpis. Sed massa mauris, cursus eu tempor ac, lacinia at ante. Nunc congue sit amet est eget porta. Maecenas fermentum a augue at accumsan. Suspendisse at porta turpis, vitae maximus felis. Aenean et congue magna. Nullam luctus fringilla purus id bibendum.
+			</p>
+			<p>
+				Etiam id efficitur dui, in cursus purus. Morbi in rutrum neque. Ut ac luctus massa. Aenean tincidunt felis ac cursus pellentesque. In hac habitasse platea dictumst. Vivamus convallis cursus enim, nec semper mauris luctus nec. Pellentesque eget sodales neque, dignissim pellentesque ipsum. Quisque commodo nec turpis id ultricies. Donec consectetur nisl id scelerisque aliquet. Nam non risus in nunc vulputate dapibus et vitae nisi. Etiam pretium leo id enim elementum vestibulum. Integer a laoreet magna, at hendrerit erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse gravida nibh ipsum, nec aliquam tortor iaculis vel. Mauris venenatis enim vitae neque tempor vestibulum.
+			</p>
+			<button type="button" name="button" data-dismiss=modal>OK</button>
+		</div>
+	{{/ionModal}}
+</template>

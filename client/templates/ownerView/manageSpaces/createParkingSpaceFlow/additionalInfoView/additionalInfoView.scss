@@ -1,0 +1,36 @@
+.outer-container{
+  @extend %flex-column-container;
+  justify-content: space-around;
+  align-items: stretch;
+
+  margin-top: 10%;
+
+  .divider-text {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.toggle.toggle-position {
+  position: absolute;
+  right: 4%;
+  top: 20%;
+}
+
+.card.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  .item.item-less-padding {
+    padding: 14px;
+    font-family: Futura;
+
+    input:checked + .track.greenToogle {
+      border-color: $theme-main-green;
+      background-color: $theme-main-green;
+    }
+  }
+}

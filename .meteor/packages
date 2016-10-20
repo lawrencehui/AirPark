@@ -1,0 +1,66 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+insecure                # Allow all DB writes from clients (for prototyping)
+accounts-password
+accounts-facebook
+accounts-google
+aldeed:collection2
+aldeed:simple-schema
+ejson
+iron:router
+meteoric:ionic
+meteoric:ionic-sass
+meteoric:ionicons-sass
+momentjs:moment
+reactive-var
+sacha:spin
+service-configuration
+zimme:active-route
+email
+check
+cfs:standard-packages
+cfs:gridfs
+aldeed:autoform
+fortawesome:fontawesome
+cfs:ui
+jeremy:geocomplete
+mdg:geolocation
+mobile-status-bar
+launch-screen
+percolate:google-api
+anti:i18n
+underscore
+mmuric:google-maps-clusterer-plus
+chriswessels:hammer
+velocityjs:velocityjs
+fastclick
+archive:jquery-dotdotdot
+fongandrew:find-and-modify
+random
+reywood:publish-composite
+patrickml:braintree
+mizzao:timesync
+crosswalk
+meteorhacks:kadira
+erasaur:meteor-lodash
+percolate:synced-cron
+lepozepo:s3
+coffeescript
+raix:push
+force-ssl

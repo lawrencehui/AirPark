@@ -1,0 +1,16 @@
+.addBankAccountDetails-container {
+  .row .field {
+    .text {
+      font-size: 1rem;
+    }
+
+    input {
+      color: $theme-black;
+    }
+  }
+
+  .row.mandatory-text {
+    font-family: $sub-font-family;
+  }
+
+}

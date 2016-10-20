@@ -1,0 +1,70 @@
+section.myGarage-container {
+  @extend %flex-column-container;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .garage-cell {
+    @extend %flex-row-container;
+    width: 100%;
+    height: 88px;
+    border-bottom: 1px solid $theme-main-green;
+
+    .garage-content {
+      height: 100%;
+      flex: 1 0 0;
+      @extend %flex-column-container;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px 24px;
+
+      .garage-label {
+        @include main-font-fix();
+        font-size: 1rem;
+      }
+
+      .garage-value {
+        @include main-font-fix(bold);
+        font-size: 1.4rem;
+      }
+    }
+
+    .garage-edit-button {
+      flex: 1 0 0;
+      @extend %flex-row-container;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding-right: 24px;
+      padding-bottom: 16px;
+
+      .edit {
+        @include main-font-fix();
+        font-size: 0.7rem;
+      }
+
+      .fa {
+        color: $theme-main-green;
+        font-size: 1.5rem;
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .add-car-button {
+    width: 100%;
+    height: 56px;
+    background-color: $theme-main-green;
+    color: #FFF;
+    text-align: center;
+    @include main-font-fix(bold);
+    line-height: 56px;
+    padding-top: 3px;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:active {
+      background-color: darken($theme-main-green, 10);
+    }
+  }
+}

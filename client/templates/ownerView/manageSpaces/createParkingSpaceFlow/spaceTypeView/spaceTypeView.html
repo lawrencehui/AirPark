@@ -1,0 +1,61 @@
+<template name="spaceTypeView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">space type</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="spaceTypeNext" class="button button-clear header-right-btn" >
+        {{Next}}
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+  			<section class="create-space-wrapper">
+  				<div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-03.png');"></div>
+  				<div class="create-space-container">
+            <div class="spaceTypeView-container">
+              <div class="divider-text">What type of parking space are you listing?</div>
+              <div class="spaceTypeViewInput-container">
+
+                <div class="card no-margin">
+                  <label class="item item-radio">
+                    <input id="privateRadio"  value="0" type="radio" name="group">
+                    <div class="item-content">
+                      Residential
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="residentialRadio" value="1" type="radio" name="group">
+                    <div class="item-content">
+                      Industrial
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="commericalRadio"  value="2" type="radio" name="group">
+                    <div class="item-content">
+                      Commercial
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="industrialRadio"  value="3" type="radio" name="group">
+                    <div class="item-content">
+                      Others
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+  				</div>
+  			</section>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

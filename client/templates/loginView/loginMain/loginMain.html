@@ -1,0 +1,48 @@
+<template name="loginMain">
+  {{#ionView}}
+    {{#ionContent scroll=false}}
+
+    <div class="login">
+      <div class="blur-bg" style="height:{{deviceHeight}}px;"></div>
+      <div class="logo-container" >
+        <h1>2PARK</h1>
+      </div>
+
+      <form>
+        <input id="email" class="login-input" name="email" type="email" placeholder="email" autocorrect="off" autocapitalize="none">
+
+        <input id="password" class="login-input" input="password" name="password" type="password" placeholder="password">
+
+        <div class="new-button login-btn">
+          <div class="new-button-text">login</div>
+        </div>
+      </form>
+
+      <div class="vert-container">
+        <div class="new-button google-login">
+          <div class="icon ion-social-googleplus"></div>
+          <div class="pipe"></div>
+          <div class="new-button-text">google</div>
+        </div>
+
+        <div class="new-button facebook-login">
+          <div class="icon ion-social-facebook"></div>
+          <div class="pipe"></div>
+          <div class="new-button-text">facebook</div>
+        </div>
+
+        <div class="hori-container">
+          <a id="createAccountBtn" href="{{pathFor 'accountSignup'}}">
+            Create Account
+          </a>
+
+          <a id="forgetPasswordBtn" href="{{pathFor 'forgotPassword'}}">
+            Forgot Password
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

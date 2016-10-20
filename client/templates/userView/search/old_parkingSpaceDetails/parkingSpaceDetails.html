@@ -1,0 +1,53 @@
+<template name="parkingSpaceDetails">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title"></h1>
+    {{/contentFor}}
+
+    <!-- {{#contentFor "headerButtonRight"}}
+      <a id="parkingReceiptDone" class="button button-clear header-right-btn" >
+        Done
+      </a>
+    {{/contentFor}} -->
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+        <div class="parkingSpaceDetails-container">
+            <div class="spaceList-image-top" style="background-image: url('/images/carparkImg.jpg')"></div>
+            <div class="lower-section-container">
+                <div class="location-section">
+                    <div class="location-label">
+                        <div class="fa fa-map-marker"></div>
+                        <div class="floor-label">Floor</div>
+                    </div>
+                    <div class="location-text">
+                        <div class="marker-text">
+                            {{parkingSpaceInfo.locationText}}
+                        </div>
+                        <div class="floor-text">{{parkingSpaceInfo.spaceFloor}}</div>
+                    </div>
+                </div>
+
+
+                <div class="space-details">
+                    <div class="spaceList-price">$16.00</div>
+
+                    <div class="spaceList-rating">
+                        <div class="rating-text">RATING</div>
+                        <div class="rating-value">4/5</div>
+                    </div>
+                    <div class="icon-wheechai fa fa-wheelchair"></div>
+                    <div class="icon-bolt fa fa-bolt"></div>
+                    <div class="icon-truck fa fa-truck"></div>
+                </div>
+            </div>
+            <div class="bookBtn">Book Now</div>
+
+        </div>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

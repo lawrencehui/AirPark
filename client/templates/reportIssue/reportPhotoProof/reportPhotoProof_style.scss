@@ -1,0 +1,43 @@
+.report-container {
+  // width: 100%;
+  // @extend %flex-column-container;
+  // align-items: center;
+
+  div.uploadImg{
+    @extend %flex-column-container;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 16px 0;
+    margin-bottom: -8px;
+    height: 160px;
+    color: $theme-main-green;
+    font-size: 0.8rem;
+    position: relative;
+    align-self: center;
+
+    div.uploadedImg-background {
+      height: 160px;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .fa.uploadedImg {
+      font-size: 4rem;
+      color: $theme-main-green;
+      margin-top: -24px;
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: inline-block;
+      opacity: 0;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<template name='reportFinish'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn" text="back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">call agent & finish</h1>
+	{{/contentFor}}
+
+	<!-- {{#contentFor "headerButtonRight"}}
+		<a class="button button-clear header-right-btn" >
+			Next
+		</a>
+	{{/contentFor}} -->
+
+	{{#ionView}}
+		{{#ionContent}}
+			<div class="report-container">
+				<div class="report-header">
+					Step 3 of 3
+				</div>
+				<div class="report-text">
+					Thanks! We have received the following issue, we will process as quickly as possible.
+				</div>
+				<div class="report-detail">
+					<div class="report-detail-row">
+						<div class="report-detail-content">
+							Issue ID:
+						</div>
+						<div class="report-detail-content">
+							{{reportId}}
+						</div>
+					</div>
+					<div class="report-detail-row">
+						<div class="report-detail-content">
+							Issue date/time:
+						</div>
+						<div class="column">
+							<div class="">
+								{{reportTime}}
+							</div>
+							<div class="">
+								{{reportDate}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="report-text">
+					You can also talk to our customer service agent for immediate assistance. Do you want to talk to the agent now?
+				</div>
+				<button class="report-call-button">Call agent <i class="fa fa-phone"></i></button>
+				<a class="report-continue" href="/">No, thanks</a>
+			</div>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

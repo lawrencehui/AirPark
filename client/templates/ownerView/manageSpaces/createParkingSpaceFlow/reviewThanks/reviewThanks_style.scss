@@ -1,0 +1,40 @@
+.thanks-container {
+  @extend %flex-column-container;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  @include main-font-fix(bold);
+  text-align: center;
+  font-size: 1.4rem;
+
+  .thanks-text {
+    width: 100%;
+    @extend %flex-column-container;
+    align-items: center;
+    color: $theme-main-green;
+
+    .thanks-text-upper {
+      margin-bottom: 24px;
+    }
+
+    .thanks-text-lower {
+      margin-bottom: 100px;
+    }
+  }
+
+  .thanks-back {
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: $theme-main-green;
+    color: #FFF;
+    padding: 24px;
+  }
+
+  .thanks-add {
+    width: 100%;
+    background-color: $theme-main-green;
+    color: #FFF;
+    padding: 24px;
+  }
+}

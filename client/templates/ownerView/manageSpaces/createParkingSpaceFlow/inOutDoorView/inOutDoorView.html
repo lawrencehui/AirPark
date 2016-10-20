@@ -1,0 +1,54 @@
+<template name="inOutDoorView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">parking area</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="parkingAreaNext" class="button button-clear header-right-btn" >
+        {{Next}}
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+  			<section class="create-space-wrapper">
+  				<div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-04.png');"></div>
+  				<div class="create-space-container">
+            <div class="inOutDoorView-container">
+              <div class="divider-text">Is your space indoor or outdoor</div>
+              <div class="inOutDoorInput-container">
+
+                <div class="card no-margin">
+                  <label class="item item-radio">
+                    <input id="indoorRadio" value="0" type="radio" name="group">
+                    <div class="item-content">
+                      Indoor
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="outdoorCoverRadio"  value="1" type="radio" name="group">
+                    <div class="item-content">
+                      Outdoor with cover
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                  <label class="item item-radio">
+                    <input id="outdoorNoCoverRadio"  value="2" type="radio" name="group">
+                    <div class="item-content">
+                      Outdoor without cover
+                    </div>
+                    <i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

@@ -1,0 +1,40 @@
+//.icon {
+//  color: #000;
+//}
+
+
+div.item, a.item {
+  color: #666;
+  .ion-ios-arrow-right {
+    color: #666;
+  }
+}
+
+.outer-container{
+  @extend %flex-column-container;
+  justify-content: space-around;
+  align-items: stretch;
+
+  .divider-text {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.toggle.toggle-position {
+  position: absolute;
+  right: 4%;
+  top: 20%;
+}
+
+.card.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  .item.item-less-padding {
+    padding: 14px;
+  }
+}

@@ -1,0 +1,97 @@
+<template name='spaceFeatures'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">Space features</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="spaceFeaturesNext" class="button button-clear header-right-btn" >
+			{{Next}}
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="create-space-wrapper">
+				<div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-06.png');"></div>
+				<div class="create-space-container">
+					<div class="spaceFeaturesView-container">
+						<div class="divider-text">Please enter the height restrictions</div>
+						<div class="spaceFeaturesInput-container">
+
+							<div class="card no-margin">
+								<label class="item item-radio" id="noHeight">
+									<input id="noHeightRadio" value="0" type="checkbox" name="group">
+									<div class="item-content">
+										Not set
+									</div>
+									<i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+								</label>
+								<label class="item height-input">
+									<!-- <input id="inputHeightRadio" value="1" type="radio" name="group"> -->
+									<div class="item-content">
+										<input id="height" type="number" name="height" value=2 step=0.1 min=0>
+										<div class="height-text">m</div>
+									</div>
+									<i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+								</label>
+							</div>
+						</div>
+
+						<div class="divider-text">Please enter the vehicle restrictions</div>
+						<div class="spaceFeaturesInput-container">
+
+							<div class="card no-margin">
+								<label class="item item-radio">
+									<input id="oversizeVehicleRadio" value=0 type="radio" name="vehicle">
+									<div class="item-content">
+										Oversize car friendly
+									</div>
+									<i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+								</label>
+								<label class="item item-radio">
+									<input id="normalVehicleRadio" value=1 type="radio" name="vehicle">
+									<div class="item-content">
+										Normal
+									</div>
+									<i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+								</label>
+								<label class="item item-radio">
+									<input id="compactVehicleRadio" value=2 type="radio" name="vehicle">
+									<div class="item-content">
+										Compact
+									</div>
+									<i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+								</label>
+							</div>
+						</div>
+
+						<div class="divider-text">Other features</div>
+						<div class="spaceFeaturesInput-container">
+
+							<div class="card no-margin">
+								<label class="item item-radio">
+									<input id="disabledRadio" value="0" type="checkbox" name="group">
+									<div class="item-content">
+										Disabled friendly
+									</div>
+									<i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+								</label>
+								<label class="item item-radio">
+									<input id="evRadio" value="1" type="checkbox" name="group">
+									<div class="item-content">
+										EV charger available
+									</div>
+									<i class="radio-icon ion-ios-checkmark custom-radio-size"></i>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

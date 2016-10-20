@@ -1,0 +1,58 @@
+<template name="additionalInfoView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">additional info</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="additionalInfoNext" class="button button-clear header-right-btn" >
+        Next
+      </a>
+    {{/contentFor}}
+
+      {{#ionView}}
+        {{#ionContent class="bg-color" scroll=true}}
+          <!-- {{> quickForm collection="ParkingSpaces" id="createParkingSpace" type="insert" template="ionic" }} -->
+          <div class="outer-container">
+            <!-- <div class="divider-text">Additional Information</div> -->
+            <div class="card no-margin">
+              <div class="item item-icon-right item-less-padding">
+                EV Charger Available
+                <label class="toggle toggle-assertive toggle-position">
+                   <input id="evToggle" type="checkbox" {{isChecked}}>
+                   <div class="track greenToogle">
+                     <div class="handle"></div>
+                   </div>
+                </label>
+              </div>
+              <div class="item item-icon-right item-less-padding">
+                Disabled Person's Parking
+                <label class="toggle toggle-assertive toggle-position">
+                   <input id="disabledToggle" type="checkbox" {{isChecked}}>
+                   <div class="track greenToogle">
+                     <div class="handle"></div>
+                   </div>
+                </label>
+              </div>
+              <div class="item item-icon-right item-less-padding">
+                Oversize Car Friendly
+                <label class="toggle toggle-assertive toggle-position">
+                   <input id="oversizedToggle" type="checkbox" {{isChecked}}>
+                   <div class="track greenToogle">
+                     <div class="handle"></div>
+                   </div>
+                </label>
+              </div>
+            </div>
+            <!-- <div id="detailsNextBtn" class="bar bar-positive bar-theme-green">
+              <div class="title">next</div>
+            </div> -->
+          </div>
+
+        {{/ionContent}}
+      {{/ionView}}
+
+</template>

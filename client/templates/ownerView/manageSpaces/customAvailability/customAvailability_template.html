@@ -1,0 +1,90 @@
+<template name='customAvailability'>
+	{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">schedule</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    {{>ionNavBackButton class="back-btn" text="save"}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="bg-color"}}
+		<section class="custom-availability-container">
+
+			<section class="twoPark-container">
+        <div class="month-nav-container">
+          <div class="fa fa-angle-left nav-btn prev-month-btn"></div>
+          <div class="month">{{month}}</div>
+          <div class="fa fa-angle-right nav-btn next-month-btn"></div>
+        </div>
+
+				<div class="calender-carousel-container">
+					<div class="calender-carousel-wrapper">
+					{{#HammerTouchArea gestureMap=calenderCarouselGestures}}
+					<section id="calender-carousel">
+						{{#each months}}
+						<div class="calender-container" data-index="{{@index}}">
+							<div class="day-bar-container">
+								<div class="day" id="mon">Mon</div>
+								<div class="day" id="tue">Tue</div>
+								<div class="day" id="wed">Wed</div>
+								<div class="day" id="thu">Thu</div>
+								<div class="day" id="fri">Fri</div>
+								<div class="day" id="sat">Sat</div>
+								<div class="day" id="sun">Sun</div>
+							</div>
+							<div class="month-container">
+								{{#each dates}}
+									<div class="date-box {{available}} {{empty}} {{today}} {{selected}}" data-date="{{fullDate}}">
+										<div class="text unclickable"><span>{{this.date}}</span></div>
+										<div class="annotation unclickable"></div>
+									</div>
+								{{/each}}
+							</div>
+						</div>
+						{{/each}}
+					</section>
+					{{/HammerTouchArea}}
+					</div>
+				</div>
+				<!-- {{#with currentTimeslot}} -->
+					<div class="cell">
+						<div class="title">Make days off</div>
+						<label class="checkbox checkbox-assertive">
+							<input type="checkbox" name="access" id="makeDaysOff" checked={{isDayOff}}>
+						</label>
+					</div>
+					<div class="cell notDayOff {{hideOnDayOff}}">
+						<label class="checkbox checkbox-assertive">
+							<input type="checkbox" name="group" id="customRange">
+						</label>
+	 					<div class="title">Custom range availale</div>
+					</div>
+					<div class="grey-cell specific-grey-cell notDayOff {{hideOnDayOff}}">
+						<div class="text">from</div>
+						<select class="startTime" name="" id=customStartTime>
+							{{#each timeSlot}}
+								<option value={{@index}} {{isSelectedStart @index}} {{isDisabledStart @index}}>{{this}}</option>
+							{{/each}}
+						</select>
+						<!-- <input type="text" class="startTime" name="name" value={{getStartTime}} id={{startTimeId}}> -->
+						<div class="text">to</div>
+						<select class="endTime" name="" id=customEndTime>
+							{{#each timeSlot}}
+								<option value={{@index}} {{isSelectedEnd @index}} {{isDisabledEnd @index}}>{{this}}</option>
+							{{/each}}
+						</select>
+						<!-- <input type="text" class="endTime" name="name" value={{getEndTime}} id={{endTimeId}}> -->
+					</div>
+				<!-- {{/with}} -->
+
+			</section>
+
+		</section>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

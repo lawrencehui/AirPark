@@ -1,0 +1,43 @@
+.licensePlateView-container{
+  @extend %flex-column-container;
+  justify-content: center;
+  align-items: center;
+
+  .divider-text {
+    @include main-font-fix(bold);
+    text-align: center;
+    color: $theme-main-green;
+    font-size: 1.4rem;
+    padding: 10% 16%;
+  }
+
+  .licensePlateViewInput-container {
+    @extend %flex-row-container;
+    justify-content: center;
+    align-items: center;
+
+    #licensePlate {
+      padding: 10px;
+      border: solid 4px $theme-main-green;
+      transition: border 0.3s;
+      color: #000;
+      height: 50px;
+      line-height: 50px;
+      width: 180px;
+      font-family: $sub-font-family;
+      font-size: 21px;
+      padding: 0 10px;
+      text-align: center;
+
+      &::-webkit-input-placeholder { text-transform: none;}
+
+      &:focus {
+        border: solid 4px darken($theme-main-green, 20);
+        //border: solid 4px #f9f61b;
+      }
+    }
+  }
+
+
+
+}

@@ -1,0 +1,118 @@
+<template name="manageSpacesList">
+    {{#contentFor "headerButtonLeft"}}
+      <button class="button button-clear pull-left left-padding" data-ion-menu-toggle="left">
+        {{> ionIcon icon='navicon'}}
+      </button>
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title title-left-padding">manage spaces</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a href="{{pathFor 'pickLocationView'}}" class="button button-clear right-padding" >
+        <i class="icon ion-ios-plus-empty"></i>
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+        <div class="booking-records-container">
+          {{#with ownerSpaces}}
+            {{#each this}}
+            <div class="booking-records-cell">
+              <div class="booking-records-image" style="background-image: url('{{parkingSpaceImg}}')"></div>
+              <div class="booking-records-content">
+                <div class="verification-row">
+                  {{#if pending}}
+                    <i class="fa fa-exclamation-circle"></i>
+                    pending for approval
+                  {{/if}}
+                  {{#if editing}}
+                    <i class="fa fa-exclamation-circle"></i>
+                    editing
+                  {{/if}}
+                  {{#if isInactive}}
+                    inactive
+                  {{/if}}
+                  {{#if isActive}}
+                    active
+                  {{/if}}
+                  {{#if isNotApproved}}
+                    <i class="fa fa-exclamation-circle"></i>
+                    not approved
+                  {{/if}}
+                </div>
+
+                <div class="park-name-row">
+                  <div class="park-name">
+                    {{this.locationText}}
+                  </div>
+                  <!-- <div class="cancelIcon fa fa-times"></div> -->
+                </div>
+
+                <div class="lower-contents">
+                  <div class="lower-container">
+                    <div class="park-floor">
+                      <div class="park-floor-title">
+                        floor
+                      </div>
+                      <div class="empty-inside"></div>
+                      <div class="park-floor-content">
+                        {{this.spaceFloor}}/F
+                      </div>
+                    </div>
+
+                    <div class="empty-first-row"></div>
+
+                    <div class="park-rating">
+                      <!-- <div class="park-rating-title">
+                        rating
+                      </div>
+                      <div class="empty-inside"></div>
+                      <div class="park-rating-content">
+                        4/5
+                      </div> -->
+                      {{#each userRatings}}
+                        {{#if isFullStar @index}}
+                          <i class="fa fa-star"></i>
+                        {{else}}
+                          <i class="fa fa-star-o"></i>
+                        {{/if}}
+                      {{/each}}
+                    </div>
+                  </div>
+
+                  <div class="lower-container">
+                    <div class="park-spaceId">
+                      <div class="park-spaceId-title">
+                        space no.
+                      </div>
+                      <div class="empty-inside"></div>
+                      <div class="park-spaceId-content">
+                        {{this.spaceNum}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="delete-space-container">
+                <i class="fa fa-trash"></i>
+              </div>
+            </div>
+            {{/each}}
+            <div class="add-more">
+              + add new carpark space
+            </div>
+          <!-- {{else}}
+            <div class="item item-borderless empty-holder">
+              Sorry, you currently do not have space setup yet.
+            </div> -->
+          {{/with}}
+        </div>
+
+      {{/ionContent}}
+    {{/ionView}}
+</template>

@@ -1,0 +1,20 @@
+<template name="connectionStatusBanner">
+  <div class="connectionStatusContainer">
+
+    {{#if isDisconnected}}
+      <div class='statusDisconnected'>
+        <i class="fa fa-exclamation-triangle"></i>
+        {{statusText}}
+      </div>
+    {{else}}
+      {{#if isReconnecting}}
+        <div class='statusReconnecting'>
+          <div class='reconnectingText'>
+            {{statusText}}
+          </div>
+          {{> ionSpinner icon="dots"}}
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</template>

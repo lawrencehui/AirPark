@@ -1,0 +1,109 @@
+section.custom-group-container {
+  margin-top: 6px;
+
+  .cell {
+    height: 56px;
+    background-color: #FFF;
+    @extend %flex-row-container;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 32px;
+    width: 100%;
+    // border-top: 1px solid #999;
+    box-shadow: 0 -1px 1px 0 $theme-light-gray;
+    margin: 0;
+
+    label.checkbox {
+      flex-shrink: 0;
+      // margin-right: 8px;
+    }
+
+    .access-text {
+      font-family: $sub-font-family;
+      font-size: 1rem;
+      flex: 1 0 0;
+    }
+  }
+
+  .invite-people {
+    @include main-font-fix('bold');
+    font-size: 1.2rem;
+    width: 100%;
+    // height: 56px;
+    padding: 24px 0;
+    text-align: center;
+    box-shadow: 0 2px 2px 0 #666;
+    margin-bottom: 3px;
+
+  }
+
+  input#groupEmailInput {
+    width: 100%;
+    background-color: $theme-light-gray;
+    padding: 0 32px;
+    height: 40px;
+  }
+
+  .select-container {
+    width: 100%;
+    padding: 24px 48px;
+    @extend %flex-row-container;
+    justify-content: space-between;
+    align-items: center;
+
+    select#selectGroup {
+      height: 24px;
+    }
+  }
+
+  .invite-button {
+    font-family: $sub-font-family;
+    margin-right: 16px;
+    color: $theme-main-green;
+    font-size: 0.8rem;
+    float: right;
+    padding: 8px;
+  }
+
+  .group-header {
+    width: 100%;
+    @include main-font-fix('bold');
+    padding: 16px 24px 8px 24px;
+    font-size: 1rem;
+
+  }
+
+  .group-list {
+    padding: 0 8px;
+    width: 100%;
+
+    .row {
+      @extend %flex-row-container;
+      width: 100%;
+      align-items: center;
+      padding: 17px 24px;
+      border-bottom: 1px solid $theme-light-red;
+
+      .name {
+        flex: 2 0 0;
+        font-family: $sub-font-family;
+        font-size: 1.1rem;
+      }
+
+      .email {
+        flex: 3 0 0;
+        font-family: $sub-font-family;
+        font-size: 0.9rem;
+      }
+
+      .delete {
+        // flex: 0 0 0;
+        flex-shrink: 0;
+        font-family: $sub-font-family;
+        margin-right: 16px;
+        color: $theme-main-green;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

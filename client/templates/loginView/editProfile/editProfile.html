@@ -1,0 +1,77 @@
+<template name="accountMain">
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left left-padding" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">account</h1>
+  {{/contentFor}}
+
+  <!-- {{#contentFor "headerButtonRight"}}
+    <button id="edit-done" class="button button-clear right-padding edit-button">
+      done
+    </button>
+  {{/contentFor}} -->
+  {{#contentFor "headerButtonRight"}}
+    <button class="buttons button button-clear header-right-btn submit-form-btn" data-form-id="editProfile">
+      done
+    </button>
+    <!-- {{>ionNavBackButton class="back-btn" text="done" id="editProfile-save"}} -->
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="bg-color"}}
+      {{#autoForm collection="Profile" id="editProfile" type="update" doc=this}}
+      <section class="editProfile-container table-view-container">
+        <!-- <div class="edit-photo">
+          <div class="edit-photo-image-container">
+            <div class="edit-photo-image"></div>
+            <div class="fa fa-user edit-photo-image-icon"></div>
+          </div>
+          <div class="edit-photo-text">
+            change photo
+          </div>
+        </div> -->
+
+        <div class="row multi-field-row">
+          <div class="field first-name">
+            <label class="text">
+              first
+            </label>
+						{{> afFieldInput name="firstName" disabled=isDisabled class="disabled"}}
+          </div>
+          <div class="field last-name">
+            <label class="text">
+              last
+            </label>
+						{{> afFieldInput name="lastName" disabled=isDisabled class="disabled"}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              email
+            </label>
+            {{> afFieldInput name="email" disabled=true class="always-disabled"}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="text">mobile</label>
+            <div class="input">
+              <div class="mobile-country">
+                <span class="disabled">+</span>
+                {{> afFieldInput name="mobile.country" type="text" disabled=isDisabled class="disabled"}}
+              </div>
+              {{> afFieldInput name="mobile.number" type="text" disabled=isDisabled class="disabled"}}
+            </div>
+          </div>
+        </div>
+        <button class="edit-profile-button">Edit</button>
+      </section>
+      {{/autoForm}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

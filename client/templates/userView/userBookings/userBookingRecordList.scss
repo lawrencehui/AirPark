@@ -1,0 +1,115 @@
+
+.view-booking-container {
+  @extend %flex-column-container;
+  color: $theme-black;
+  font-family: BebasNeue-Bold;
+  border-top: 1px solid $theme-main-green;
+
+  .user-view-booking-cell {
+    @extend %flex-row-container;
+    border-bottom: 1px solid $theme-main-green;
+    color: $theme-main-green;
+    height: 88px;
+    justify-content: flex-start;
+    align-items: center;
+
+    .booking-records-image {
+      // flex: 3 0 0;
+      width: 30%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .view-booking-price {
+      padding-left: 24px;
+      font-size: 2rem;
+      // flex: 3 0 0;
+      width: 30%;
+    }
+
+    .view-booking-content {
+      height: 100%;
+      @extend %flex-column-container;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 0px;
+      padding-right: 24px;
+      @include main-font-fix(bold);
+      font-size: 1.6rem;
+      // flex: 8 0 0;
+      width: 70%;
+      // width: 100%;
+      //font-family: BebasNeue-Bold;
+
+      // .upper-container {
+      //   @extend %flex-row-container;
+      //   justify-content: flex-start;
+      //   align-items: stretch;
+      //   margin-bottom: 6px;
+      //   font-size: 1.8rem;
+      //   line-height: 1.8rem;
+      //
+      //   .user-name,
+      //   .location-text {
+      //     color: $theme-black;
+      //     padding-right: 10px;
+      //     //border-right: 1px solid $theme-main-green;
+      //   }
+      //
+      //   .location-text {
+      //     font-size: 1.4rem;
+      //     height: 28px;
+      //     overflow: hidden;
+      //     text-overflow: ellipsis;
+      //   }
+      //
+      //   .user-pipe {
+      //     @include main-font-fix();
+      //     margin-top: -6px;
+      //   }
+      //
+      //   .user-number {
+      //     padding-left: 10px;
+      //   }
+      // }
+
+      .lower-container,
+      .upper-container {
+        flex: 1 0 0;
+        @extend %flex-row-container;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      .lower-container {
+        margin-top: -4px;
+      }
+
+      .item-container {
+        // flex: 1 0 0;
+        width: 50%;
+        @extend %flex-column-container;
+        justify-content: flex-start;
+        align-items: stretch;
+        // margin-right: 24px;
+        padding-left: 16px;
+
+        .item-title {
+          color: $theme-black;
+          font-size: 0.7rem;
+        }
+        .item-content {
+          margin-top: -6px;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+      }
+    }
+  }
+}

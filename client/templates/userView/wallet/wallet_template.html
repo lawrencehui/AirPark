@@ -1,0 +1,49 @@
+<template name='wallet'>
+	{{#contentFor "headerButtonLeft"}}
+		<button class="button button-clear pull-left left-padding" data-ion-menu-toggle="left">
+			{{> ionIcon icon='navicon'}}
+		</button>
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">my wallet</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="my-wallet-container">
+				<div class="cell">
+					I am a driver:
+				</div>
+				<a href="{{pathFor 'paymentMethods'}}">
+					<div class="cell">
+						<div class="text">
+							Payment Methods
+						</div>
+						<i class="fa fa-angle-right"></i>
+					</div>
+				</a>
+				<div class="row-divider"></div>
+				<div class="cell">
+					I am a space owner:
+				</div>
+				<a href="{{pathFor 'payoutMethods'}}">
+					<div class="cell">
+						<div class="text">
+							Payout Methods
+						</div>
+						<i class="fa fa-angle-right"></i>
+					</div>
+				</a>
+				<a href="{{pathFor 'accountBalance'}}">
+					<div class="cell">
+						<div class="text">
+							Account balance & Request Payout
+						</div>
+						<i class="fa fa-angle-right"></i>
+					</div>
+				</a>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

@@ -1,0 +1,28 @@
+<template name='selectCreditCard'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton path='bookingConfirmation' class="back-btn"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title title-left-padding title-center">select payment methods</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<div class="paymentMethods-container">
+				{{#with creditCards}}
+					{{#each this}}
+					<div class="credit-card-cell" data-index={{@index}}>
+						<div class="fa {{cardType}} cc-type-icon"></div>
+						<div class="cc-detail">
+							{{maskedNumber}}
+						</div>
+					</div>
+					{{/each}}
+				{{/with}}
+				<div class="cc-add">+ add payment method</div>
+			</div>
+		{{/ionContent}}
+	{{/ionView}}
+
+</template>

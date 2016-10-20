@@ -1,0 +1,107 @@
+<template name="bookingReceiptAfter">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">parking receipt</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="parkingReceiptAfterDone" class="button button-clear header-right-btn" >
+        Done
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+      <div class="bookingReceiptAfterView-container">
+        <div class="card no-margin">
+            <div class="top-section-container">
+                <div class="receipt-row">
+                    <div class="marker-icon receipt-row-top-section col1">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+
+                    <div class="locationText receipt-row-top-section col2">
+                        {{locationText}}
+                    </div>
+                </div>
+
+                <div class="receipt-row">
+                    <div class="floor-text receipt-row-top-section col1">floor</div>
+                    <div class="floor receipt-row-top-section col2">
+                        {{spaceFloor}}/F
+                    </div>
+                </div>
+
+                <div class="receipt-row">
+                    <div class="parkSapceId receipt-row-top-section col1">
+                        Space ID
+                    </div>
+                    <div class="carparkID receipt-row-top-section col2">
+                        {{spaceNum}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="dottedLine"></div>
+            <div class="parkingReceiptTitle">Parking Receipt</div>
+            <div class="dottedLine"></div>
+
+            <div class="bookingRef">
+                Ref: {{bookingRef}}
+            </div>
+
+            <div class="spaceImg" style="background-image: url('{{spaceImage}}')"></div>
+
+            <div class="uploadImg">
+                <div class="ratings-container">
+                  {{#each userRatings}}
+                    {{#if isFullStar @index}}
+                      <i class="fa fa-star userRatings" data-value={{@index}}></i>
+                    {{else}}
+                      <i class="fa fa-star-o userRatings" data-value={{@index}}></i>
+                    {{/if}}
+                  {{/each}}
+                </div>
+                {{#if userRated}}
+                  <div class="uploadImg-text">thanks</div>
+                {{else}}
+                  <div class="uploadImg-text">rate now</div>
+                {{/if}}
+            </div>
+
+            {{#with transactionInfo}}
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Date</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">{{this.timeslotDate}}</div>
+            </div>
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Time</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">{{timeslotTypeText}}</div>
+            </div>
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Remarks</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">N/A</div>
+            </div>
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Paid</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">${{this.amount}}.00</div>
+            </div>
+            {{/with}}
+            <div class="reportBtn">Report Issue</div>
+            <div class="contactBtn">Contact Agent</div>
+
+            <div class="thankyou">Thank you and drive safely!</div>
+        </div>
+      </div>
+
+      {{/ionContent}}
+    {{/ionView}}
+</template>

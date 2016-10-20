@@ -1,0 +1,49 @@
+.floorView-container{
+  @extend %flex-column-container;
+  justify-content: center;
+  align-items: center;
+
+  .divider-text {
+    @include main-font-fix(bold);
+    text-align: center;
+    color: $theme-main-green;
+    font-size: 1.4rem;
+    padding: 10% 16%;
+  }
+
+  .floorInput-container {
+    @extend %flex-row-container;
+    justify-content: center;
+    align-items: center;
+
+    #spacefloor {
+      padding: 10px;
+      border: solid 4px $theme-main-green;
+      transition: border 0.3s;
+      color: #000;
+      height: 50px;
+      width: 90px;
+      font-family: $sub-font-family;
+      font-size: 21px;
+      padding: 0 10px;
+      text-align: center;
+
+      &:focus {
+        border: solid 4px darken($theme-main-green, 20);
+        //border: solid 4px #f9f61b;
+      }
+    }
+
+    div.floorText {
+      @include main-font-fix(bold);
+      text-align: center;
+      color: $theme-black;
+      font-size: 1.3rem;
+      margin-left: 1.4vw;
+    }
+
+  }
+
+
+
+}

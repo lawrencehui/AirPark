@@ -1,0 +1,51 @@
+<template name='payoutHistory'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn" text="back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title title-left-padding title-center">payout history</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+    {{#ionContent class="bg-color"}}
+		<div class="payout-summary-row">
+			<div class="total-label">Completed payout</div>
+			<div class="total-amount">HK${{completedPayout}}</div>
+		</div>
+		<div class="payout-remarks-row">
+			<div class="total-label">(Net of transaction fee: HK$965)</div>
+		</div>
+		<div class="payout-summary-row">
+			<div class="total-label">Future payout</div>
+			<div class="total-amount">HK${{futurePayout}}</div>
+		</div>
+		<div class="payoutTable">
+			<table>
+				<thead>
+					<tr>
+						<th>Request Date</th>
+						<th>Account</th>
+						<th>Gross Amount*</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each this}}
+						<tr>
+							<td>{{date}}</td>
+							<td>{{this.account.accountNo}}</td>
+							<td>HK${{this.amount}}</td>
+							<td>{{status}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div class="bank-charge-remarks-row">
+			* The bank will charge a xxx% fee per transaction.
+		</div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

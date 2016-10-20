@@ -1,0 +1,46 @@
+.transactionTable{
+  width: 100%;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+
+  table, th, td {
+    border: 1px solid #aaa;
+  }
+
+  th {
+    height: 32px;
+    font-family: $main-font-family-bold;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding-top: 10px;
+  }
+
+  td {
+    padding: 8px;
+    font-family: $sub-font-family;
+    vertical-align: middle;
+  }
+}
+
+.gross-row {
+  @extend %flex-row-container;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24px 24px;
+
+  .total-label{
+    font-family: $sub-font-family;
+    font-size: 1.1rem;
+  }
+
+  .total-amount{
+    font-family: $main-font-family-bold;
+    font-size: 1.8rem;
+    padding-top: 4px;
+  }
+}

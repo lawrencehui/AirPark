@@ -1,0 +1,29 @@
+<template name='paymentMethods'>
+	{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="back" path="wallet"}}
+  {{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title title-left-padding title-center">payment methods</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+    {{#ionContent class="bg-color"}}
+      <div class="paymentMethods-container">
+        {{#with creditCards}}
+          {{#each this}}
+          <div class="credit-card-cell">
+            <div class="fa {{cardType}} cc-type-icon"></div>
+            <div class="cc-detail">
+              {{maskedNumber}}
+            </div>
+            <div class="removeCCBtn">Remove</div>
+          </div>
+          {{/each}}
+        {{/with}}
+  			<div class="cc-add">+ add payment method</div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

@@ -1,0 +1,44 @@
+<template name='transactionHistory'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn" text="back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title title-left-padding title-center">transaction history</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+    {{#ionContent class="bg-color"}}
+		<div class="gross-row">
+			<div class="total-label">Gross Earning</div>
+			<div class="total-amount">HK${{grossEarning}}</div>
+		</div>
+		<div class="transactionTable">
+			<table>
+				<thead>
+					<tr>
+						<th>List ID</th>
+						<th>Date / Time</th>
+						<th>Price</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each this}}
+						<tr>
+							<td>{{spaceId}}</td>
+							<td>
+								<div class="date">{{timeslotDate}}</div>
+								<div class="timeslot">{{timeslotTypeText}}</div>
+							</td>
+							<td>${{amount}}</td>
+							<td>{{statusText}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

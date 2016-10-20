@@ -1,0 +1,16 @@
+section.my-wallet-container {
+  .cell {
+    padding: 16px;
+    border-bottom: 1px solid $theme-light-red;
+    @extend %flex-row-container;
+    justify-content: space-between;
+
+    i {
+      color: $theme-main-green;
+    }
+  }
+
+  .row-divider {
+    height: 40px;
+  }
+}

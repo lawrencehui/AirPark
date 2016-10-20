@@ -1,0 +1,155 @@
+<template name="bookingReceiptOngoing">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">parking receipt</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="parkingReceiptOngoingDone" class="button button-clear header-right-btn" >
+        Done
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color-green"}}
+
+      <div class="bookingReceiptOngoingView-container">
+        <div class="card no-margin">
+            <div class="top-section-container">
+                <div class="receipt-row">
+                    <div class="marker-icon receipt-row-top-section col1">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+
+                    <div class="locationText receipt-row-top-section col2">
+                        {{locationText}}
+                    </div>
+                </div>
+
+                <div class="receipt-row">
+                    <div class="floor-text receipt-row-top-section col1">floor</div>
+                    <div class="floor receipt-row-top-section col2">
+                        {{spaceFloor}}/F
+                    </div>
+                </div>
+
+                <div class="receipt-row">
+                    <div class="parkSapceId receipt-row-top-section col1">
+                        Space No.
+                    </div>
+                    <div class="carparkID receipt-row-top-section col2">
+                        {{spaceNum}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="dottedLine"></div>
+            <div class="parkingReceiptTitle">{{countDownTimer}}</div>
+            <div class="dottedLine"></div>
+
+            <div class="bookingRef">
+                Ref: {{bookingRef}}
+            </div>
+
+            <!-- <div class="uploadImg">
+              {{#with reportImg}}
+                <div class="uploadedImg-background" style="background-image: url('{{this}}')"></div>
+              {{else}}
+                <i class="fa fa-camera fa-2x fa-fw uploadedImg"></i>
+                <div class="uploadImg-text">report now</div>
+              {{/with}}
+            </div> -->
+
+            {{#with transactionInfo}}
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Date</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">{{this.timeslotDate}}</div>
+            </div>
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Time</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">{{timeslotTypeText}}</div>
+            </div>
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Remarks</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="details-remarks-icons">
+                    {{#if parkingSpaceInfo.hasOversizeParking}}
+                    <div class="icon-wheechai fa fa-wheelchair"></div>
+                    {{/if}}
+
+                    {{#if parkingSpaceInfo.hasEVCharger}}
+                    <div class="icon-bolt fa fa-bolt"></div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">instruction</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">{{parkingSpaceInfo.instructions}}</div>
+            </div>
+            <div class="receipt-row">
+                <div class="receipt-row-child col1">Paid</div>
+                <div class="receipt-row-child col2"></div>
+                <div class="receipt-row-child col3">${{this.amount}}.00</div>
+            </div>
+            {{/with}}
+
+            <div class="thankyou">Thank you and drive safely!</div>
+            {{#if canCancel}}
+            <div class="cancelBtn">Cancel Booking</div>
+            {{/if}}
+            <div class="reportBtn">Report Issue</div>
+            <div class="contactBtn">Contact Agent</div>
+
+
+            <div class="black-overlay"></div>
+            <div class="cancel-modal">
+              <div class="modal-top">
+                <div class="modal-header">
+                  As per the cancellation policy, you will be refunded HK${{transactionInfo.amount}} if you cancel.
+                </div>
+                <div class="modal-red-button" id="cancel-booking">
+                  Cancel booking
+                </div>
+                <div class="modal-red-button">
+                  <a data-ion-modal="_cancellationModal">Cancellation policy</a>
+                </div>
+              </div>
+              <div class="modal-back-button">
+                Back
+              </div>
+            </div>
+        </div>
+      </div>
+
+      {{/ionContent}}
+    {{/ionView}}
+</template>
+
+<template name="_cancellationModal">
+	{{#ionModal title="Cancellation Policy"}}
+		<div class="modal-container">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum lorem vel quam consequat, ut lacinia tortor fringilla. Suspendisse ullamcorper, lectus id faucibus viverra, risus mi convallis velit, non facilisis mi arcu eget mi. Donec rutrum sapien a leo vestibulum, dictum tincidunt urna tempor. Suspendisse lorem urna, pellentesque sed odio id, sagittis rutrum nibh. Nam in sem turpis. In non eros ullamcorper, pharetra augue nec, accumsan lorem. Vivamus convallis at ex mattis cursus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+			</p>
+			<p>
+				Proin blandit nibh ac ultricies fringilla. Proin quis nisl nec risus luctus sagittis vel pretium lectus. Donec pretium congue tellus a maximus. Quisque ullamcorper lacus sed magna rutrum interdum. Sed justo sapien, consequat a luctus sit amet, sodales eu sem. Aenean eget accumsan purus. Nulla facilisi. Mauris vitae pretium justo. Phasellus id nisi vestibulum, dignissim tortor varius, dignissim ipsum. Etiam vel laoreet eros. Suspendisse at ligula lorem.
+			</p>
+			<p>
+				Pellentesque in elit at lacus lacinia lobortis ut vel nisi. Praesent venenatis faucibus diam, ac venenatis risus. Aliquam nec tempus diam, eleifend hendrerit mauris. Cras vitae fermentum sem. Nulla vehicula nulla orci. Integer efficitur sapien hendrerit, posuere est quis, gravida turpis. Duis nec ante faucibus lectus pretium ullamcorper tincidunt eu nibh. Vestibulum at nunc eget diam interdum condimentum vitae in dolor.
+			</p>
+			<p>
+				Interdum et malesuada fames ac ante ipsum primis in faucibus. In feugiat, erat in aliquam tincidunt, augue dui rhoncus nunc, eu eleifend sem orci nec nisi. Integer commodo id dui non rhoncus. Proin ligula leo, volutpat vitae sem eu, accumsan blandit nunc. Donec ac maximus massa, nec vulputate turpis. Sed massa mauris, cursus eu tempor ac, lacinia at ante. Nunc congue sit amet est eget porta. Maecenas fermentum a augue at accumsan. Suspendisse at porta turpis, vitae maximus felis. Aenean et congue magna. Nullam luctus fringilla purus id bibendum.
+			</p>
+			<p>
+				Etiam id efficitur dui, in cursus purus. Morbi in rutrum neque. Ut ac luctus massa. Aenean tincidunt felis ac cursus pellentesque. In hac habitasse platea dictumst. Vivamus convallis cursus enim, nec semper mauris luctus nec. Pellentesque eget sodales neque, dignissim pellentesque ipsum. Quisque commodo nec turpis id ultricies. Donec consectetur nisl id scelerisque aliquet. Nam non risus in nunc vulputate dapibus et vitae nisi. Etiam pretium leo id enim elementum vestibulum. Integer a laoreet magna, at hendrerit erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse gravida nibh ipsum, nec aliquam tortor iaculis vel. Mauris venenatis enim vitae neque tempor vestibulum.
+			</p>
+			<button type="button" name="button" data-dismiss=modal>OK</button>
+		</div>
+	{{/ionModal}}
+</template>

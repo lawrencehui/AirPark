@@ -1,0 +1,81 @@
+.payoutMethods-container {
+
+  .payout-text {
+    font-family: $sub-font-family;
+    line-height: 26px;
+    font-size: 14px;
+    margin: 32px;
+  }
+
+  .bank-account-cell {
+    @extend %flex-row-container;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 32px;
+    padding-left: 16px;
+    padding-right: 48px;
+    margin-left: 16px;
+    border-bottom: 1px solid $theme-light-red;
+    font-size: 1rem;
+    font-family: $main-font-family-bold;
+
+    .bank-name{
+      letter-spacing: 0.12rem;
+
+    }
+
+    .bank-account-detail{
+      letter-spacing: 0.12rem;
+    }
+
+    .removeCCBtn {
+      font-family: $sub-font-family;
+      font-size: 0.8rem;
+      color: $theme-main-green;
+    }
+  }
+
+  .bank-account-add {
+    width: 100%;
+    background-color: $theme-main-green;
+    color: #FFF;
+    padding: 12px;
+    margin-top: 24px;
+    font-family: $main-font-family-bold;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 16px;
+
+  }
+
+  .payout-rules-title {
+    font-family: $main-font-family-bold;
+    font-size: 20px;
+    margin: 32px;
+    letter-spacing: 0.1rem;
+
+  }
+
+  .payout-rules-container {
+    margin: 0 32px;
+    font-family: $sub-font-family;
+
+    .payout-rules {
+      &.row {
+        padding: 0;
+        margin: 12px 0;
+
+        &.row-title {
+          flex: 2 0 0;
+        }
+
+        &.row-content {
+          flex: 4 0 0;
+          padding-left: 24px;
+        }
+      }
+    }
+  }
+}

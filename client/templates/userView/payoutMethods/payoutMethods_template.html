@@ -1,0 +1,51 @@
+<template name='payoutMethods'>
+	{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="back" path="wallet"}}
+  {{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title title-left-padding title-center">payout methods {{testing}}</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<div class="payoutMethods-container">
+				<div class="payout-text">
+					When you receive a payment for a reservation, we call that payment to you a "payout". We currently support bank transfer as a payout method, which can be set up and edited here:
+				</div>
+				{{#with bankAccounts}}
+					{{#each this}}
+					<div class="bank-account-cell">
+						<div class="bank-name">{{this.name}}</div>
+						<div class="bank-account-detail">
+							{{this.accountNo}}
+						</div>
+						<div class="removeCCBtn">Remove</div>
+					</div>
+					{{/each}}
+				{{/with}}
+				<!-- <div class="bank-account-cell">
+					<div class="bank-name">HSBC</div>
+					<div class="bank-account-detail">
+						123876234123
+					</div>
+					<div class="removeCCBtn">Remove</div>
+				</div> -->
+				<div class="bank-account-add"><a href="/addBankAccountDetails">+ add payout method</a></div>
+				<div class="payout-rules-title">Payout routing rules</div>
+				<div class="payout-rules-container">
+					<div class="payout-rules row">
+						<div class="payout-rules row row-title">Fee</div>
+						<div class="payout-rules row row-content">The bank will charge a xxxxx fee for every transfer</div>
+					</div>
+					<div class="payout-rules row">
+						<div class="payout-rules row row-title">Processing time</div>
+						<div class="payout-rules row row-content">Once you request a transfer, it takes up to 20 business days for 2park to process the payment</div>
+					</div>
+				</div>
+
+			</div>
+		{{/ionContent}}
+	{{/ionView}}
+
+</template>

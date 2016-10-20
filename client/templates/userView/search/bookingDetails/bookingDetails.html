@@ -1,0 +1,81 @@
+<template name="bookingDetails">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton path=goingback class="back-btn back-to-map"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">details</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+        <div class="bookingDetails-container">
+            <div class="spaceList-image-top" style="background-image: url('{{spaceInfo.parkingSpaceImg}}')"></div>
+
+            <div class="details-col-container">
+                <div class="details-row">
+                    <div class="details-label">address</div>
+                    <div class="details-value">{{spaceInfo.locationText}}</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">floor</div>
+                    <div class="details-value">{{spaceInfo.spaceFloor}}</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">no.</div>
+                    <div class="details-value">{{spaceInfo.spaceNum}}</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">space type</div>
+                    <div class="details-value">{{spaceTypeText spaceInfo.spaceType}}</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">parking area</div>
+                    <div class="details-value">{{parkingAreaText spaceInfo.parkingAreaType}}</div>
+                </div>
+                <div class="details-row">
+					<div class="details-label">space feature</div>
+					<div class="details-content">
+						<div class="">
+							{{{spaceFeaturesText spaceInfo.height spaceInfo.vehicleRestriction}}}
+						</div>
+						<div class="details-icons-container">
+							{{#if spaceInfo.hasDisableParking}}
+							<div class="icon-wheechai fa fa-wheelchair"></div>
+							{{/if}}
+
+							{{#if spaceInfo.hasEVCharger}}
+							<div class="icon-bolt fa fa-bolt"></div>
+							{{/if}}
+						</div>
+					</div>
+        	    </div>
+                <div class="details-row">
+                    <div class="details-label">rating</div>
+                    <div class="details-content">
+                      <div class="details-icons-container">
+                        {{#each userRatings}}
+                          {{#if isFullStar @index}}
+                            <i class="fa fa-star"></i>
+                          {{else}}
+                            <i class="fa fa-star-o"></i>
+                          {{/if}}
+                        {{/each}}
+                      </div>
+                    </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">remark</div>
+                    <div class="details-value">{{{instructionsText spaceInfo.presetInstructions}}}</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">instruction</div>
+                    <div class="details-value">{{spaceInfo.instructions}}</div>
+                </div>
+            </div>
+            <div id="bookingDetailsButton" class="bookingDetailsButton">book</div>
+        </div>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

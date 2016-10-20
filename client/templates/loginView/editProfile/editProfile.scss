@@ -1,0 +1,122 @@
+.editProfile-container {
+
+  .row .field .disabled, .row .field .always-disabled {
+    border-color: #000;
+    color: #000;
+  }
+
+  .edit-photo {
+    @extend %flex-row-container;
+    height: 76px;
+    border: 1px solid transparentize($theme-main-green, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    .edit-photo-image-container {
+      position: relative;
+
+      .edit-photo-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid $theme-main-green;
+        overflow: hidden;
+      }
+
+      .edit-photo-image-icon {
+        @include absolute-positioning(auto auto 0 9px);
+        color: $theme-main-green;
+        font-size: 40px;
+      }
+    }
+
+    .edit-photo-text {
+      @include main-font-fix(bold);
+      color: $theme-main-green;
+      font-size: 1.4rem;
+      margin-left: 24px;
+    }
+  }
+
+  .edit-profile-title {
+    color: #000;
+    font-family: BebasNeue-Bold;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .field {
+    &.first-name {
+      flex: 3 0 0;
+    }
+
+    &.last-name {
+      flex: 2 0 0;
+    }
+  }
+
+  .input {
+    @extend %flex-row-container;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mobile-country {
+    position:relative;
+    flex: 1 0 0;
+    margin-right: 8px;
+
+    span{
+      position: absolute;
+      left: 0px;
+      top: 12px;
+      pointer-events: none;
+      margin-left: 16px;
+      color: $theme-main-green;
+      font-family: $sub-font-family;
+      font-size: 1.2rem;
+    }
+    input {
+      text-indent: 22px;
+    }
+  }
+
+  .row-header {
+    @extend %flex-row-container;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+
+    a {
+      color: $theme-main-green;
+      @include main-font-fix();
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+  }
+
+  input[name="mobile.number"] {
+    flex: 3 0 0;
+    margin-left: 8px;
+  }
+
+  .credit-card-cell, .bank-account-cell {
+    @extend %flex-row-container;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    border: 1px solid transparentize($theme-main-green, 0.5);
+    padding: 0 8px;
+    margin-bottom: 8px;
+
+    .cc-detail, .bank-account-detail {
+      font-family: $sub-font-family;
+      color: $theme-main-green;
+    }
+  }
+
+  .credit-card-cell .cc-type-icon {
+    font-size: 1.5rem;
+    margin-right: 16px;
+  }
+}

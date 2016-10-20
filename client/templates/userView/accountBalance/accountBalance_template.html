@@ -1,0 +1,59 @@
+<template name='accountBalance'>
+	{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="back" path="wallet"}}
+  {{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title title-left-padding title-center">account balance</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<div class="accountBalance-container">
+					<div class="accountBalance-cell">
+						<div class="accountBalance-cell row">
+							<div class="accountBalance-cell title">Gross earnings</div>
+							<div class="accountBalance-cell amount">HK${{grossEarning}}</div>
+						</div>
+						<a href="/transactionHistory">
+							<div id="txn-history-btn" class="accountBalance-cell row btn-text">
+								<div class="text">View Transaction History</div>
+								<i class="fa fa-angle-right"></i>
+							</div>
+						</a>
+					</div>
+
+					<div class="accountBalance-cell">
+						<div class="accountBalance-cell row">
+							<div class="accountBalance-cell title">Completed Payout</div>
+							<div class="accountBalance-cell amount">HK${{completedPayout}}</div>
+						</div>
+						<div class="accountBalance-cell row">
+							<div class="accountBalance-cell title">Future Payout</div>
+							<div class="accountBalance-cell amount">HK${{futurePayout}}</div>
+						</div>
+						<a href="/payoutHistory">
+							<div id="payout-history-btn" class="accountBalance-cell row btn-text">
+								<div class="text">View Payout History</div>
+								<i class="fa fa-angle-right"></i>
+							</div>
+						</a>
+					</div>
+
+					<div class="accountBalance-cell">
+						<div class="accountBalance-cell row">
+							<div class="accountBalance-cell title">Account Balance</div>
+							<div class="accountBalance-cell amount">HK${{accountBalance}}</div>
+						</div>
+						<a href="/requestPayout">
+							<div id="request-payout-btn" class="accountBalance-cell row btn-text">
+								<div class="text">Request a Payout</div>
+								<i class="fa fa-angle-right"></i>
+							</div>
+						</a>
+					</div>
+			</div>
+		{{/ionContent}}
+	{{/ionView}}
+
+</template>

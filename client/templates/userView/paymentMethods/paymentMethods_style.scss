@@ -1,0 +1,47 @@
+.paymentMethods-container {
+  @extend %flex-column-container;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+
+  .credit-card-cell{
+    @extend %flex-row-container;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    //height: 40px;
+    padding: 18px 12px;
+    padding-left: 0px;
+    padding-right: 24px;
+    margin-left: 16px;
+    border-bottom: 1px solid $theme-light-red;
+    font-size: 0.85rem;
+
+    .cc-detail{
+      font-family: $sub-font-family;
+      color: $theme-black;
+    }
+    .removeCCBtn {
+      font-family: $sub-font-family;
+      color: $theme-main-green;
+    }
+  }
+
+  .credit-card-cell .cc-type-icon {
+    font-size: 1.5rem;
+    margin-right: 16px;
+  }
+
+  .cc-add {
+    width: 100%;
+    background-color: $theme-main-green;
+    color: #FFF;
+    padding: 12px;
+    margin-top: 24px;
+    font-family: $main-font-family-bold;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 16px;
+  }
+}

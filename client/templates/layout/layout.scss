@@ -1,0 +1,77 @@
+.item-divider.thick-divider {
+  @include main-font-fix(bold);
+  height: 44px;
+  background-color: $theme-main-green;
+  color: #000;
+  line-height: 44px;
+  font-size: 1.4rem;
+  padding-top: 3px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border: none;
+}
+
+
+a.sidemenu-text.item {
+  width: 100%;
+  font-family: Futura;
+  font-size: 1.2rem;
+  height: 60px;
+  line-height: 32px;
+  //padding: 16px 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: block;
+  text-align: left;
+  border: none;
+  border-top: 1px solid $theme-main-green;
+  border-bottom: 1px solid $theme-main-green;
+  color: $theme-black;
+
+  &:active {
+    background-color: $theme-main-green;
+  }
+}
+//
+//.bg-sidemenu {
+//  overflow-y: hidden;
+//  overflow-x: hidden;
+//
+//  .list:last-child {
+//    margin-bottom: 40px;
+//  }
+//}
+
+
+.menu-content {
+  box-shadow: -2px 0px 6px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2);
+  //margin-left: -1px;
+}
+
+.snap-drawer {
+  width: 266px;
+}
+
+.override-header {
+  top: 20px;
+}
+
+.spinner-container {
+  @include absolute-positioning(0);
+  // opacity: 0;
+  // transition: opacity 0.2s ease-in;
+  @extend %flex-bare-container;
+  @extend %flex-all-center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease-in;
+  pointer-events: none;
+  &.open {
+    z-index: 1000;
+    pointer-events: auto;
+    // opacity: 1;
+  }
+  &.blackOverlay{
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}

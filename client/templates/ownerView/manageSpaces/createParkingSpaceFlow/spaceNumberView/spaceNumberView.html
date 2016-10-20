@@ -1,0 +1,28 @@
+<template name="spaceNumberView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">space number</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+      <a id="spaceNumNext" class="button button-clear header-right-btn" >
+        Next
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent class="bg-color"}}
+
+      <div class="spaceNumberView-container">
+        <div class="divider-text">What is the number / ID for your parking space?</div>
+        <div class="spaceNumberViewInput-container">
+          <input id="spaceNumber" type="text" placeholder="e.g. A203" style="text-transform:uppercase">
+        </div>
+      </div>
+
+      {{/ionContent}}
+    {{/ionView}}
+</template>

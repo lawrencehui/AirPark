@@ -1,0 +1,45 @@
+<template name='reportPhotoProof'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn" text="back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">photo proof</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="reportPhotoProofNext" class="button button-clear header-right-btn" >
+			Next
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent}}
+			<div class="report-container">
+				<div class="report-header">
+					Step 2 of 3
+				</div>
+				<div class="report-text">
+					Please take a picture to prove/show your issue, so we can understand your issue better and help.
+				</div>
+				<div class="uploadImg">
+						<!-- <i class="fa fa-camera fa-2x fa-fw uploadedImg" ></i> -->
+
+						{{#with reportImg}}
+							<!-- <img class="uploadedImg" src={{this.url}}> -->
+								<div class="uploadedImg-background" style="background-image: url('{{this}}')"></div>
+						{{else}}
+		          <!-- <i class="fa fa-upload fa-2x fa-fw uploadedImg" ></i> -->
+								<i class="fa fa-camera fa-2x fa-fw uploadedImg"></i>
+								<!-- <div class="uploadImg-text">report now</div> -->
+						{{/with}}
+
+		         <!-- <input type="file" class="choose-file"> -->
+				</div>
+				<div class="report-text">
+					For example, if another car is parking at your space, please take a picture showing both the space and the other car's plate number, so we can follow up accordingly.
+				</div>
+			</div>
+		{{/ionContent}}
+	{{/ionView}}
+</template>

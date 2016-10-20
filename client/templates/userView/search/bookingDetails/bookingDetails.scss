@@ -1,0 +1,251 @@
+.bookingDetails-container{
+  @extend %flex-column-container;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+
+  .spaceList-image-top {
+    width: 100%;
+    height: 150px;
+    // flex: 0 0 150px;
+    background: center no-repeat;
+    background-size: cover;
+  }
+
+  // .lower-section-container {
+  //   //@include main-font-fix();
+  //   font-family: $main-font-family;
+  //   padding: 12px;
+  //   width: 100%;
+  //   background-color: $theme-light-gray;
+  //
+  //   .location-section {
+  //     @extend %flex-row-container;
+  //     justify-content: flex-start;
+  //     align-items: center;
+  //     font-size: 1.2rem;
+  //
+  //
+  //     .location-label {
+  //       flex: 1 0 0;
+  //       text-align: center;
+  //
+  //       .fa-map-marker {
+  //           margin-bottom: 8px;
+  //       }
+  //
+  //       .floor-label {
+  //         font-size: 0.8rem;
+  //       }
+  //     }
+  //
+  //     .location-text {
+  //       flex: 7 0 0;
+  //       margin-left: 24px;
+  //
+  //       .marker-text {
+  //         font-family: Futura;
+  //         font-size: 1rem;
+  //         margin-bottom: 8px;
+  //       }
+  //       .floor-text {
+  //
+  //       }
+  //     }
+  //   }
+  // }
+
+  .details-col-container {
+    width: 100%;
+    padding: 0 24px;
+    // flex: 1 0 0;
+    height: calc(100% - 194px);
+    overflow: scroll;
+
+    .details-row {
+      @extend %flex-row-container;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 11px 0;
+      border-bottom: 1px solid $theme-light-red;
+
+      .details-label {
+        @include main-font-fix(bold);
+        font-size: 1rem;
+        flex: 3 0 0;
+        // padding-top: 3px;
+
+      }
+
+      .details-value {
+        flex: 6 0 0;
+        font-family: Futura;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      .details-content {
+        flex: 6 0 0;
+        font-family: Futura;
+        @extend %flex-column-container;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .details-icons-container {
+          @extend %flex-row-container;
+
+          .fa {
+            margin: 4px;
+            font-size: 0.8rem;
+            color: $theme-main-green;
+          }
+        }
+      }
+
+      .details-remarks-icons {
+        flex: 9 0 0;
+        @extend %flex-row-container;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: $theme-main-green;
+        font-size: 1.2rem;
+
+        .fa {
+          //flex: 1 0 0;
+          padding-right: 16px;
+          //text-align: center;
+        }
+      }
+    }
+
+  }
+
+  .time-container {
+    @extend %flex-column-container;
+    flex: 9 0 0;
+
+    .time-cell {
+      @extend %flex-row-container;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid transparentize(#ccc, 0.5);
+      color: #ccc;
+      height: 36px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-family: $sub-font-family;
+
+      &.selected {
+        border: 2px solid transparentize($theme-main-green, 0.5);
+        background-color: $theme-main-green;
+        color: #fff;
+      }
+    }
+  }
+
+  .cc-container {
+    @extend %flex-column-container;
+    flex: 9 0 0;
+
+    .cc-addBtn {
+      font-family: Futura;
+      font-size: 1rem;
+      height: 36px;
+      cursor: pointer;
+    }
+
+    .cc-cell {
+      @extend %flex-row-container;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid transparentize(#ccc, 0.5);
+      color: #ccc;
+      height: 36px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      cursor: pointer;
+
+      .cc-type-icon {
+        font-size: 1.2rem;
+        // margin-left: 8px;
+        margin-right: 4px;
+      }
+
+      .cc-detail {
+        font-size: 1.1rem;
+        font-family: $sub-font-family;
+        margin-left: 4px;
+      }
+
+      &.selected {
+        border: 2px solid transparentize($theme-main-green, 0.5);
+        background-color: $theme-main-green;
+        color: #fff;
+      }
+    }
+  }
+
+  .details-section-container {
+    @extend %flex-row-container;
+    @include main-font-fix(bold);
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.2rem;
+    padding: 24px;
+    width: 100%;
+
+    .details-labels {
+      flex: 3 0 0;
+      font-size: 1rem;
+      div {
+        margin: 12px 0;
+      }
+    }
+    .details-values {
+      flex: 6 0 0;
+      font-family: Futura;
+      font-size: 1rem;
+      //margin-left: 36px;
+      padding-top: 3px;
+      div {
+        margin: 8px 0;
+      }
+      .remarks-icons {
+        @extend %flex-row-container;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: $theme-main-green;
+        //font-size: 1.4rem;
+
+        .fa {
+          //flex: 1 0 0;
+          padding-right: 16px;
+          color: $theme-main-green;
+          //text-align: center;
+        }
+      }
+    }
+  }
+
+  .bookingDetailsButton {
+    width: 100%;
+    height: 44px;
+    background-color: $theme-main-green;
+    color: #FFF;
+    text-align: center;
+    @include main-font-fix(bold);
+    line-height: 44px;
+    padding-top: 3px;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+
+    &:active {
+      background-color: darken($theme-main-green, 10);
+    }
+  }
+}

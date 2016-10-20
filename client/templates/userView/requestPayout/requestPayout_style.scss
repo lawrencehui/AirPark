@@ -1,0 +1,100 @@
+.request-acct-balance-row {
+  @extend %flex-row-container;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24px;
+
+  .total-label{
+    font-family: $sub-font-family;
+    font-size: 0.9rem;
+  }
+
+  .total-amount{
+    font-family: $main-font-family-bold;
+    font-size: 1.6rem;
+    padding-top: 4px;
+  }
+}
+
+.request-note-row{
+  @extend %flex-row-container;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24px;
+
+  .note-label{
+    font-family: $sub-font-family;
+    font-size: 0.9rem;
+    margin-right: 32px;
+  }
+
+  .note-details{
+    font-family: $sub-font-family;
+    font-size: 0.9rem;
+    margin-left: 18px;
+  }
+}
+
+.request-select-bank-acct-container {
+  padding: 8px 24px;
+
+  .request-select-an-account-row{
+    font-family: $main-font-family-bold;
+    font-size: 1rem;
+  }
+
+  .bank-account-row {
+    @extend %flex-row-container;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $sub-font-family;
+    font-size: 1rem;
+    margin: 8px 0;
+
+    .checkbox {
+      flex: 2 0 0;
+    }
+
+    .bank-name {
+      flex: 2 0 0;
+    }
+
+    .bank-acct-no {
+      text-align: right;
+      flex: 6 0 0;
+    }
+  }
+}
+
+.agreement-row {
+  @extend %flex-row-container;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $sub-font-family;
+  font-size: 0.9rem;
+  padding: 0px 24px;
+
+  .agreement-text {
+    margin: 0 12px;
+
+    span {
+      color: $theme-main-green;
+      text-decoration: underline;
+    }
+  }
+}
+
+.request-confirm-btn {
+  width: 100%;
+  background-color: $theme-main-green;
+  color: #FFF;
+  padding: 12px;
+  margin-top: 24px;
+  font-family: $main-font-family-bold;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 16px;
+}

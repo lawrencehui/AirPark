@@ -1,0 +1,129 @@
+section.slot-container {
+  .ratesAndAvailability-header {
+    text-align: center;
+    font-family: $sub-font-family;
+    font-size: 1.5rem;
+    line-height: normal;
+    padding: 8px;
+  }
+  .cell {
+    @extend %flex-column-container;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+
+    .upper-cell {
+      height: 56px;
+      background-color: #FFF;
+      @extend %flex-row-container;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 24px;
+      width: 100%;
+      box-shadow: 0 1px 6px 0 #666;
+      margin: 2px 0;
+    }
+
+    .lower-cell {
+      height: 56px;
+      background-color: $theme-light-gray;
+      @extend %flex-row-container;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    label.checkbox {
+      flex: 1 0 0;
+      margin-left: 8px;
+    }
+
+    .title {
+      font-family: $sub-font-family;
+      font-size: 1rem;
+      flex: 4 0 0;
+    }
+
+    .price-text {
+      @include main-font-fix('bold');
+      font-size: 0.9rem;
+      // flex: 4 0 0;
+      width: 50%;
+    }
+
+    .dollar-sign {
+      font-family: $sub-font-family;
+      font-size: 1.4rem;
+      // flex: 1 0 0;
+      width: 12%;
+      text-align: center;
+    }
+
+    input.price-input {
+      // flex: 2 0 0;
+      width: 25%;
+      background-color: rgba(0,0,0,0);
+      //height: 50px;
+      //width: 100%;
+
+      text-align: right;
+      color: #000;
+      font-family: $sub-font-family;
+      font-size: 1.4rem;
+      //line-height: 0;
+      //padding: 0;
+      //margin: 0;
+      //display: inline-block;
+
+      &::-webkit-input-placeholder {
+        color: #aba6a6;
+        opacity: 0.5;
+        padding-top: 4px;
+      }
+      &[disabled] {
+        color: rgba(0,0,0,0.3);
+      }
+    }
+
+    .toggle {
+      margin-top: 1px;
+    }
+
+    .toggle.theme-toggle input:checked + .track {
+      border-color: $theme-main-green;
+      background-color: $theme-main-green;
+
+    }
+  }
+
+  .cell-row {
+    @extend %flex-row-container;
+    width: 100%;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid $theme-light-red;
+
+    .cell-text {
+      flex: 1 0 0;
+      @include main-font-fix('bold');
+      font-size: 0.9rem;
+    }
+
+    .cell-content {
+      flex: 1 0 0;
+      font-family: $sub-font-family;
+      font-size: 1rem;
+    }
+
+    .cell-edit {
+      // flex: 0 0 0;
+      flex-shrink: 0;
+      font-family: $sub-font-family;
+      margin-right: 16px;
+      color: $theme-main-green;
+      font-size: 0.7rem;
+    }
+  }
+
+}

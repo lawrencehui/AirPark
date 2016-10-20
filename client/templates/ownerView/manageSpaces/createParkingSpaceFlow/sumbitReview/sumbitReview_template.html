@@ -1,0 +1,104 @@
+<template name='sumbitReview'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn submit-review-back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">submit for review</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+    {{#ionContent class="bg-color" scroll=true}}
+      <!-- {{> quickForm collection="ParkingSpaces" id="createParkingSpace" type="insert" template="ionic" }} -->
+      <div class="sumbitReview-container">
+        <div class="sumbitReview-header">Please check all information before you submit for review</div>
+        <div class="required">*Required field</div>
+				<div class="review-row no-border">
+					<div class="review-row-header">address<span class="required">*</span></div>
+					<div class="review-row-content">{{locationText}}</div>
+					<!-- <div class="review-row-edit" id="review-edit-address">edit</div> -->
+				</div>
+				<div class="review-row-images">
+					<!-- <div class="review-row-left-images"> -->
+						<div class="review-row-image-space no-right" style="background-image: url('{{parkingSpaceImgUrl}}')">
+							<button class="review-space-image-button">edit</button>
+						</div>
+						<div class="review-row-image-building no-left" style="background-image: url('{{parkingBuildingImgUrl}}')"></div>
+					<!-- </div> -->
+					<!-- <div class="review-row-right-images"> -->
+						<div class="review-row-image-verification right-most" style="background-image: url('{{parkingVerificationImgUrl}}')">
+							<button class="review-verification-image-button">edit</button>
+						</div>
+					<!-- </div> -->
+				</div>
+				<div class="review-row" id="review-edit-floorAndSpace">
+					<div class="review-row-header">floor<span class="required">*</span></div>
+					<div class="review-row-content">{{spaceFloorText}}</div>
+					<div class="review-row-edit">edit</div>
+				</div>
+				<div class="review-row" id="review-edit-floorAndSpace">
+					<div class="review-row-header">no.<span class="required">*</span></div>
+					<div class="review-row-content">{{spaceNumText}}</div>
+					<div class="review-row-edit">edit</div>
+				</div>
+				<div class="review-row" id="review-edit-spaceType">
+					<div class="review-row-header">space type<span class="required">*</span></div>
+					<div class="review-row-content">{{spaceTypeText}}</div>
+					<div class="review-row-edit">edit</div>
+				</div>
+				<div class="review-row" id="review-edit-parkingArea">
+					<div class="review-row-header">parking area<span class="required">*</span></div>
+					<div class="review-row-content">{{parkingAreaText}}</div>
+					<div class="review-row-edit">edit</div>
+				</div>
+				<div class="review-row" id="review-edit-spaceFeature">
+					<div class="review-row-header">space feature</div>
+					<div class="review-row-content">
+						<div class="">
+							{{{spaceFeaturesText}}}
+						</div>
+						<div class="review-icons-container">
+							<div class="">
+								Other features:
+							</div>
+							{{#if hasDisableParking}}
+							<div class="icon-wheechai fa fa-wheelchair"></div>
+							{{/if}}
+
+							{{#if hasEVCharger}}
+							<div class="icon-bolt fa fa-bolt"></div>
+							{{/if}}
+						</div>
+					</div>
+					<div class="review-row-edit">edit</div>
+				</div>
+				<div class="review-row" id="review-edit-instruction">
+					<div class="review-row-header">instruction</div>
+					<div class="review-row-content">{{{instructionsText}}}</div>
+					<div class="review-row-edit">edit</div>
+				</div>
+      </div>
+			<div class="review-bottom-container">
+				<div class="review-submit" data-ion-modal="_agreementModal">
+					submit
+				</div>
+				<div class="review-save">
+					save
+				</div>
+			</div>
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+
+<template name="_agreementModal">
+	{{#ionModal title="Agreement"}}
+		<div class="modal-container">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum lorem vel quam consequat, ut lacinia tortor fringilla. Suspendisse ullamcorper, lectus id faucibus viverra, risus mi convallis velit, non facilisis mi arcu eget mi. Donec rutrum sapien a leo vestibulum, dictum tincidunt urna tempor. Suspendisse lorem urna, pellentesque sed odio id, sagittis rutrum nibh. Nam in sem turpis. In non eros ullamcorper, pharetra augue nec, accumsan lorem. Vivamus convallis at ex mattis cursus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+			</p>
+			<button type="button" name="button" data-dismiss=modal id="reviewAgree">Agree</button>
+		</div>
+	{{/ionModal}}
+</template>

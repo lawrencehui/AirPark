@@ -1,0 +1,161 @@
+section.custom-availability-container {
+  section.twoPark-container .calender-container {
+    width: 100vw;
+  }
+
+  .hideOnDayOff {
+    display: none;
+  }
+
+  // .notCustomRange {
+  //   display: none;
+  // }
+
+  .grey-cell {
+    height: 56px;
+    background-color: $theme-light-gray;
+    @extend %flex-row-container;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 24px;
+    text-align: center;
+    z-index: 10;
+    margin-top: 3px;
+
+    .weekday-text {
+      width: 10%;
+      // height: 100%;
+    }
+
+    .text {
+      width: 15%;
+      @include main-font-fix();
+      font-size: 1rem;
+      padding-top: 2px;
+      color: #5bb4c6;
+    }
+
+    input {
+      width: 15%;
+      font-family: $sub-font-family;
+      font-size: 1.1rem;
+      background-color: $theme-light-gray;
+      margin: 0 8px;
+      padding: 0;
+      text-align: center;
+      // width: 64px;
+    }
+  }
+
+  .cell {
+    height: 56px;
+    background-color: #FFF;
+    @extend %flex-row-container;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 24px;
+    width: 100%;
+    box-shadow: 0 1px 6px 0 #666;
+    margin: 0;
+
+    label.checkbox {
+      flex-shrink: 0;
+    }
+
+    .title {
+      font-family: $sub-font-family;
+      font-size: 1rem;
+      flex: 4 0 0;
+      padding: 0 16px;
+    }
+
+    .dollar-sign {
+      font-family: $sub-font-family;
+      font-size: 1.4rem;
+      flex: 1 0 0;
+      text-align: center;
+    }
+
+    input {
+      flex: 1.8 0 0;
+      background-color: rgba(0,0,0,0);
+      //height: 50px;
+      //width: 100%;
+
+      text-align: right;
+      color: #000;
+      font-family: $sub-font-family;
+      font-size: 1.4rem;
+      //line-height: 0;
+      //padding: 0;
+      //margin: 0;
+      //display: inline-block;
+
+      &::-webkit-input-placeholder {
+        color: #aba6a6;
+        opacity: 0.5;
+        padding-top: 4px;
+      }
+      &[disabled] {
+        color: rgba(0,0,0,0.3);
+      }
+    }
+
+    .toggle {
+      margin-top: 1px;
+    }
+
+    .toggle.theme-toggle input:checked + .track {
+      border-color: $theme-main-green;
+      background-color: $theme-main-green;
+
+    }
+  }
+
+  .slot-container {
+    .price-box {
+      height: 92px;
+      max-height: 3px;
+      background-color: #fff;
+      overflow: hidden;
+      color: #fff;
+      padding: 0 24px;
+      @extend %flex-column-container;
+      justify-content: space-between;
+      align-items: flex-start;
+      transition: all 0.2s linear;
+
+      .title {
+        font-family: $sub-font-family;
+        font-size: 1rem;
+      }
+
+      .price-input-container {
+        @extend %flex-row-container;
+        justify-content: flex-end;
+        align-items: center;
+
+        .dollar-sign {
+          font-family: $sub-font-family;
+          font-size: 32px;
+        }
+
+        .input {
+          flex-basis: 120px;
+          align-self: flex-end;
+          @extend %flex-column-container;
+          justify-content: center;
+          align-items: center;
+        }
+
+      }
+
+      &.open {
+        max-height: 92px;
+        padding: 16px 24px;
+        background-color: $theme-main-green;
+        //box-shadow: inset 1px 2px 5px rgba(255,255,255,0.7);
+      }
+    }
+  }
+}

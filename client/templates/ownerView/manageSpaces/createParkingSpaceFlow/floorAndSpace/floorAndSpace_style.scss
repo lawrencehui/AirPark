@@ -1,0 +1,53 @@
+.floorSpace-container{
+  @extend %flex-column-container;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10%;
+
+  .divider-text {
+    @include main-font-fix(bold);
+    text-align: center;
+    color: $theme-main-green;
+    font-size: 1.4rem;
+    // padding: 10%;
+  }
+
+  .floorSpaceInput-container {
+    @extend %flex-row-container;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 8px;
+
+    #spacefloor,
+    #spaceNumber {
+      padding: 10px;
+      border: solid 4px $theme-main-green;
+      transition: border 0.3s;
+      color: #000;
+      height: 50px;
+      width: 100%;
+      font-family: $sub-font-family;
+      font-size: 21px;
+      padding: 0 10px;
+      text-align: left;
+
+      &:focus {
+        border: solid 4px darken($theme-main-green, 20);
+        //border: solid 4px #f9f61b;
+      }
+    }
+
+    // div.floorText {
+    //   @include main-font-fix(bold);
+    //   text-align: center;
+    //   color: $theme-black;
+    //   font-size: 1.3rem;
+    //   margin-left: 1.4vw;
+    // }
+
+  }
+
+
+
+}

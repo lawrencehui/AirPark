@@ -1,0 +1,51 @@
+<template name="pickLocationView">
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="back-btn"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">Space Address</h1>
+    {{/contentFor}}
+
+    <!-- <button id="navDoneBtn" class="button button-clear header-right-btn">Next</button> -->
+    {{#contentFor "headerButtonRight"}}
+      <a id="pickLocationNext" class="button button-clear header-right-btn" >
+        Next
+      </a>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent}}
+        <section class="create-space-wrapper">
+          <div class="steps-bar" style="background-image: url('/steps_bar/2park_steps-01.png');"></div>
+          <div class="create-space-container">
+            <!-- <div class="map-container">
+              {{> googleMap name="searchLocationMap" options=searchLocationMapOptions}}
+            </div> -->
+            <div id="map1"></div>
+            <!-- <div id="currentLocationBtn">
+              <i class="fa fa-crosshairs {{isCurrentLocationActive}}"></i>
+            </div> -->
+            <div class="card search-card">
+              <div class="search-bar">
+                <form class="searchBarForm">
+                  <input id="searchBar" class="searchBox" name="focus" type="text" placeholder="Where is your parking spot?">
+                  <button class="reset-button" type="reset">
+                    <i class="fa fa-times-circle"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {{#unless isCurrentLocationActive}}
+              {{> ionSpinner icon="ripple"}}
+              <div class="spinner-text">locating your position...</div>
+            {{/unless}}
+            <!-- <div id="navDoneBtn" class="bar bar-footer bar-positive bar-theme-green">
+              <div class="title">next</div>
+            </div> -->
+          </div>
+        </section>
+      {{/ionContent}}
+    {{/ionView}}
+</template>

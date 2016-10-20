@@ -1,0 +1,82 @@
+<!-- <template name="bookingRecordList">
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left left-padding" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding">manage bookings</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="bg-color"}}
+      <div class="booking-records-container">
+        {{#with parkingSpaces}}
+          {{#each this}}
+          <div class="booking-records-cell">
+            <div class="booking-records-image" style="background-image: url('{{parkingSpaceImg}}')"></div>
+            <div class="booking-records-content">
+              {{#unless this.isApproved}}
+                <div class="verification-row">
+                  <i class="fa fa-exclamation-circle"></i>
+                  pending for approval
+                </div>
+              {{/unless}}
+              <div class="park-name-row">
+                <div class="park-name">
+                  {{this.locationText}}
+                </div>
+
+              </div>
+
+              <div class="lower-contents">
+                <div class="lower-container">
+                  <div class="park-floor">
+                    <div class="park-floor-title">
+                      floor
+                    </div>
+                    <div class="empty-inside"></div>
+                    <div class="park-floor-content">
+                      {{this.spaceFloor}}/F
+                    </div>
+                  </div>
+
+                  <div class="empty-first-row"></div>
+
+                  <div class="park-rating">
+                    <div class="park-rating-title">
+                      rating
+                    </div>
+                    <div class="empty-inside"></div>
+                    <div class="park-rating-content">
+                      4/5
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lower-container">
+                  <div class="park-spaceId">
+                    <div class="park-spaceId-title">
+                      space no.
+                    </div>
+                    <div class="empty-inside"></div>
+                    <div class="park-spaceId-content">
+                      {{this.spaceNum}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          {{/each}}
+        {{else}}
+          <div class="item item-borderless empty-holder">
+            Sorry, you currently do not have space setup yet.
+          </div>
+        {{/with}}
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template> -->

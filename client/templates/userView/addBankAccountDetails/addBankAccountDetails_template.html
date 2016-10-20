@@ -1,0 +1,74 @@
+<template name='addBankAccountDetails'>
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="back-btn" text="back"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title title-left-padding title-center">add payout method</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="buttons button button-clear header-right-btn" id="addBankAccountDone">
+      done
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="bg-color"}}
+      <!-- {{#autoForm collection="Profile" id="updatePushBankAccount" type="update-pushArray" doc=doc scope="bankAccounts"}} -->
+      <section class="addBankAccountDetails-container table-view-container">
+
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              * bank name
+            </label>
+            <input type="text" id="addBankAccountsName" value="">
+            <!-- {{> afFieldInput name="bankAccounts.$.name" type="text"}} -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              Branch Location
+            </label>
+            <input type="text" id="addBankAccountsBranchLocation" value="">
+            <!-- {{> afFieldInput name="bankAccounts.$.branchLocation" type="text"}} -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              * Payee
+            </label>
+            <input type="text" id="addBankAccountsPayee" value="">
+            <!-- {{> afFieldInput name="bankAccounts.$.payee" type="text"}} -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              * Bank code
+            </label>
+            <input type="text" id="addBankAccountsBankCode" value="">
+            <!-- {{> afFieldInput name="bankAccounts.$.bankCode" type="text"}} -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="text">
+              * Account Number
+            </label>
+            <input type="text" id="addBankAccountsAccountNo" value="">
+            <!-- {{> afFieldInput name="bankAccounts.$.accountNo" type="text"}} -->
+          </div>
+        </div>
+        <div class="row mandatory-text">
+          * Please fill in the required information
+        </div>
+      </section>
+      <!-- {{/autoForm}} -->
+    {{/ionContent}}
+  {{/ionView}}
+</template>

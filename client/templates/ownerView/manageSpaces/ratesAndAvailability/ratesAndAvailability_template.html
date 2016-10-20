@@ -1,0 +1,50 @@
+<template name='ratesAndAvailability'>
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton class="back-btn ratesAndAvailability-back"}}
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+		<h1 class="title">set the price</h1>
+	{{/contentFor}}
+
+	{{#contentFor "headerButtonRight"}}
+		<a id="ratesAndAvailabilityDone" class="button button-clear header-right-btn" >
+			Done
+		</a>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent class="bg-color"}}
+			<section class="slot-container">
+				<div class="ratesAndAvailability-header">
+					I would like to offer
+				</div>
+				{{#each slotIndex}}
+						<div class="cell" data-type="{{@index}}">
+							<div class="upper-cell">
+								<label class="checkbox checkbox-assertive">
+									<input id={{timeSlotCheckboxId @index}} data-type="{{@index}}" type="checkbox" name="group" {{isChecked @index}}>
+								</label>
+								<div class="title">{{getSlotText @index}}</div>
+							</div>
+							<div class="lower-cell">
+								<div class="price-text">{{priceText @index}}</div>
+								<div class="dollar-sign">$ </div>
+								<input class="price-input" data-type="{{@index}}" placeholder='e.g 14' maxlength='2' tabindex="-1" pattern="[0-9]{1,2}" type="number" value='{{getPrice @index}}' {{isDisabled @index}}>
+							</div>
+						</div>
+				{{/each}}
+				<div class="cell-row">
+					<div class="cell-text">availablity</div>
+					<div class="cell-content">{{availableDay}}</div>
+					<div class="cell-edit edit-availability">Edit</div>
+				</div>
+				<div class="cell-row">
+					<div class="cell-text">set custom availablity</div>
+					<div class="cell-content">Not Set</div>
+					<div class="cell-edit edit-custom-availability">Edit</div>
+				</div>
+			</section>
+		{{/ionContent}}
+	{{/ionView}}
+</template>
